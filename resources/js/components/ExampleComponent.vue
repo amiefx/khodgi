@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-container>
-            <v-btn class="success"> New Button</v-btn>
+           exmple
     </v-container>
     </v-app>
 </template>
