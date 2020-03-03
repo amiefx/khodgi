@@ -39,11 +39,13 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
+        $admin = null;
+
         if(auth()->attempt($loginData)) {
             $accessToken = auth()->user()->createToken('authToken')->accessToken;
-            // $admin = Auth::user()->isAdmin();
-            // return response(['user' => auth()->user(), 'access_token' => $accessToken, 'isAdmin' => $admin], 200);
-            return response(['user' => auth()->user(), 'access_token' => $accessToken], 200);
+             $admin = Auth::user()->isAdmin();
+             return response(['user' => auth()->user(), 'access_token' => $accessToken, 'isAdmin' => $admin], 200);
+           // return response(['user' => auth()->user(), 'access_token' => $accessToken], 200);
         }
 
         return response()->json(['status'=>'Invalid credentials'], 403);

@@ -49,9 +49,9 @@ class User extends Authenticatable
     //     return $this->hasOne(Profile::class)->withDefault();
     // }
 
-    // public function isAdmin(){
-    //     return strtolower($this->role->name) === 'administrator';
-    // }
+    public function isAdmin(){
+        return strtolower($this->role->name) === 'administrator';
+    }
 
     public function sendPasswordResetNotification($token)
     {

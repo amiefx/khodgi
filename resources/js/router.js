@@ -9,6 +9,7 @@ import ForgotpasswordComponent from './components/ForgotpasswordComponent';
 import ResetpasswordComponent from './components/ResetpasswordComponent';
 import User from './account/User';
 import AdminComponent from './admin/AdminComponent';
+import RolesComponent from './admin/RolesComponent';
 
 
 
@@ -31,7 +32,7 @@ const routes = [
     {
         path: '/admin', component: AdminComponent, name: 'Admin',
         children: [
-            // { path: 'roles', component: RolesComponent, name: 'Roles' },
+             { path: 'roles', component: RolesComponent, name: 'Roles' },
             // { path: 'users', component: UserComponent, name: 'User' }
         ],
         beforeEnter: (to, from, next) => {
