@@ -10,6 +10,7 @@ import ResetpasswordComponent from './components/ResetpasswordComponent';
 import User from './account/User';
 import AdminComponent from './admin/AdminComponent';
 import RolesComponent from './admin/RolesComponent';
+import UserComponent from './admin/UserComponent';
 
 
 
@@ -33,7 +34,7 @@ const routes = [
         path: '/admin', component: AdminComponent, name: 'Admin',
         children: [
              { path: 'roles', component: RolesComponent, name: 'Roles' },
-            // { path: 'users', component: UserComponent, name: 'User' }
+             { path: 'users', component: UserComponent, name: 'User' }
         ],
         beforeEnter: (to, from, next) => {
             axios.get('/api/verify')

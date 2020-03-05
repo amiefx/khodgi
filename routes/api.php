@@ -26,6 +26,9 @@ Route::group(['middleware' => ['auth:api'], 'namespace'=>'Api'], function () {
     Route::get('/verify', 'AuthController@verify');
     Route::post('roles/delete', 'RolesController@deleteAll');
     Route::post('users/delete', 'UserController@deleteAll');
+    Route::post('email/verify', 'UserController@verifyEmail');
+    Route::post('change-role', 'UserController@changeRole');
+    Route::post('change-photo', 'UserController@changePhoto');
 });
 
 Route::post('/password/email', 'Api\ForgotPasswordController@sendResetLinkEmail');
