@@ -293,9 +293,19 @@
                 .then(res => this.users = res.data.users)
                 .catch(err => console.dir(err.response))
           }
-          if(e.length <=0){
-              axios.get(`/api/users?page=${e.page}`,{params:{'per_page': e.itemsPerPage}})
-                .then(res => this.users = res.data.users)
+          if(e.length <= 0){
+             // axios.get(`/api/users?page=${e.page}`,{params:{'per_page': e.itemsPerPage}})
+            //   axios.get(`/api/users`)
+            //     .then(res => this.users = res.data.users)
+            //     .catch(err => console.dir(err.response))
+
+            const sortBy = this.options.sortBy.length == 0 ? 'name' : this.options.sortBy[0];
+            const orderBy = this.options.sortDesc.length > 0 || this.options.sortDesc[0] ? 'asc' : 'desc';
+                axios.get(`/api/users?page=${e.page}`,{params:{'per_page': e.itemsPerPage, 'sort_by': sortBy, 'order_by': orderBy}})
+                .then(res => {
+                    this.users = res.data.users
+                    this.roles = res.data.roles
+                })
                 .catch(err => console.dir(err.response))
           }
 

@@ -3052,12 +3052,21 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       if (e.length <= 0) {
+        // axios.get(`/api/users?page=${e.page}`,{params:{'per_page': e.itemsPerPage}})
+        //   axios.get(`/api/users`)
+        //     .then(res => this.users = res.data.users)
+        //     .catch(err => console.dir(err.response))
+        var sortBy = this.options.sortBy.length == 0 ? 'name' : this.options.sortBy[0];
+        var orderBy = this.options.sortDesc.length > 0 || this.options.sortDesc[0] ? 'asc' : 'desc';
         axios.get("/api/users?page=".concat(e.page), {
           params: {
-            'per_page': e.itemsPerPage
+            'per_page': e.itemsPerPage,
+            'sort_by': sortBy,
+            'order_by': orderBy
           }
         }).then(function (res) {
-          return _this5.users = res.data.users;
+          _this5.users = res.data.users;
+          _this5.roles = res.data.roles;
         })["catch"](function (err) {
           return console.dir(err.response);
         });

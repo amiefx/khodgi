@@ -58,9 +58,21 @@ class UserController extends Controller
      */
     public function show(Request $request, $id)
     {
+        // $per_page = $request->per_page ? $request->per_page : 5;
+        // $sortBy = $request->sort_by;
+        // $orderBy = $request->order_by;
+        // $users = User::where('name', 'LIKE', "%$id%")->orderBy($sortBy, $orderBy)->paginate(5);
+        // return response()->json(['users'=> $users], 200);
+
         $per_page = $request->per_page ? $request->per_page : 5;
-        $users = User::where('name', 'LIKE', "%$id%")->paginate($per_page);
-        return response()->json(['users'=> $users], 200);
+        $sortBy = $request->sort_by ? $request->sort_by : 'name';
+        $orderBy = $request->order_by ? $request->order_by : 'asc';
+        $users = User::where('name', 'LIKE', "%$id%");
+        return response()->json([
+            'users' => new UserCollection($users->orderBy($sortBy, $orderBy)->paginate($per_page)) ,
+            'roles' => Role::pluck('name')->all()
+        ], 200);
+
     }
 
     /**
