@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\User as UserResource;
 use App\Http\Resources\UserCollection;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Profile;
 use App\User;
@@ -141,6 +142,21 @@ class UserController extends Controller
         $photo = $request->photo->storeAs('images', Str::random(20).".{$ext}", 'public');
         $profile->photo = $photo;
         $user->profile()->save($profile);
+        return response()->json(['user' => new UserResource($user)], 200);
+    }
+
+    public function myAccount()
+    {
+        $users = auth('api')->user();
+        return response()->json(['users' => new UserResource($users)], 200);
+    }
+
+    public function updateProfile(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->password = bcrypt($request->password);
+        $user->save();
         return response()->json(['user' => new UserResource($user)], 200);
     }
 }

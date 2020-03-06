@@ -17,6 +17,10 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
+Route::get('/user', function (Request $request) {
+    return $request->user();
+});
+
 Route::post('/register', 'Api\AuthController@register');
 Route::post('/login', 'Api\AuthController@login');
 
@@ -29,6 +33,8 @@ Route::group(['middleware' => ['auth:api'], 'namespace'=>'Api'], function () {
     Route::post('email/verify', 'UserController@verifyEmail');
     Route::post('change-role', 'UserController@changeRole');
     Route::post('change-photo', 'UserController@changePhoto');
+    Route::get('my-account', 'UserController@myAccount');
+    Route::put('user/update-profile/{id}', 'UserController@updateProfile');
 });
 
 Route::post('/password/email', 'Api\ForgotPasswordController@sendResetLinkEmail');

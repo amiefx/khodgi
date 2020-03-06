@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-navigation-drawer
       v-model="drawer"
-      :clipped="$vuetify.breakpoint.lgAndUp"
+      temporary
       app
     >
       <v-list dense>
@@ -69,40 +69,22 @@
                 {{ item.text }}
               </v-list-item-title>
             </v-list-item-content>
-            <v-list-item-action>
-              <v-icon>{{ item.icon2 }}</v-icon>
-            </v-list-item-action>
           </v-list-item>
         </template>
       </v-list>
-
-    <v-list dense>
-      <v-list-item link @click="logout">
-            <v-list-item-action>
-              <v-icon> mdi-logout-variant </v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>
-                Log out
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-      </v-list>
-
     </v-navigation-drawer>
 
-    <v-app-bar
-      :clipped-left="$vuetify.breakpoint.lgAndUp"
-      app
-      color="blue darken-3"
-      dark
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title
-        style="width: 300px"
-        class="ml-0 pl-4"
-      >
-        <span class="hidden-sm-and-down">Google Contacts</span>
+    <v-app-bar extended :clipped-left="$vuetify.breakpoint.mdAndUp" app class="hidden-sm-and-down">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up" />
+
+      <v-toolbar-title style="width: 300px" class="text-center mx-auto my-auto">
+        <span class="text-center mx-auto my-auto">
+          <v-img
+            src="https://cdn.shopify.com/s/files/1/0011/0277/4316/files/Screen_Shot_2020-01-21_at_18.38_300x.png?v=1579671269"
+            aspect-ratio="3.5"
+            contain
+          ></v-img>
+        </span>
       </v-toolbar-title>
       <v-text-field
         flat
@@ -112,32 +94,75 @@
         label="Search"
         class="hidden-sm-and-down"
       />
+
       <v-spacer />
-      <v-btn icon>
-        <v-icon>mdi-apps</v-icon>
-      </v-btn>
+
       <v-btn icon>
         <v-icon>mdi-bell</v-icon>
       </v-btn>
-      <v-btn
-        icon
-        large
-      >
-        <v-avatar
-          size="32px"
-          item
-        >
-          <v-img
-            src="https://cdn.vuetifyjs.com/images/logos/logo.svg"
-            alt="Vuetify"
-          /></v-avatar>
+      <v-btn icon large>
+        <v-avatar size="32px" item>
+          <v-img src="https://cdn.vuetifyjs.com/images/logos/logo.svg" alt="Vuetify" />
+        </v-avatar>
+      </v-btn>
+
+      <template v-slot:extension>
+        <v-tabs class="d-flex justify-center">
+          <v-tab>Tab 1</v-tab>
+          <v-tab>Tab 2</v-tab>
+          <v-tab>Tab 3</v-tab>
+        </v-tabs>
+      </template>
+    </v-app-bar>
+
+    <v-app-bar :clipped-left="$vuetify.breakpoint.mdAndUp" app class="hidden-md-and-up">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up" />
+
+      <span class="text-center mx-auto my-auto">Khodgi</span>
+
+      <v-btn icon>
+        <v-icon>mdi-bell</v-icon>
       </v-btn>
     </v-app-bar>
+
     <v-content>
       <v-container
+        class="fill-height"
         fluid
       >
-        <router-view></router-view>
+        <v-row
+          align="center"
+          justify="center"
+        >
+          <v-tooltip right>
+            <template v-slot:activator="{ on }">
+              <v-btn
+                :href="source"
+                icon
+                large
+                target="_blank"
+                v-on="on"
+              >
+                <v-icon large>mdi-code-tags</v-icon>
+              </v-btn>
+            </template>
+            <span>Source</span>
+          </v-tooltip>
+          <v-tooltip right>
+            <template v-slot:activator="{ on }">
+              <v-btn
+                icon
+                large
+                href="https://codepen.io/johnjleider/pen/MNYLdL"
+                target="_blank"
+                v-on="on"
+              >
+                <v-icon large>mdi-codepen</v-icon>
+              </v-btn>
+            </template>
+            <span>Codepen</span>
+          </v-tooltip>
+        </v-row>
       </v-container>
     </v-content>
   </v-app>
@@ -150,16 +175,14 @@
     },
     data: () => ({
       dialog: false,
-      drawer: null,
+      drawer: false,
       items: [
         { icon: 'mdi-contacts', text: 'Contacts' },
         { icon: 'mdi-history', text: 'Frequently contacted' },
         { icon: 'mdi-content-copy', text: 'Duplicates' },
         {
-          icon2: 'mdi-chevron-up',
-          'icon2-alt': 'mdi-chevron-down',
-          icon: 'mdi-pencil',
-          'icon-alt': 'mdi-pencil',
+          icon: 'mdi-chevron-up',
+          'icon-alt': 'mdi-chevron-down',
           text: 'Labels',
           model: true,
           children: [
@@ -186,17 +209,9 @@
         { icon: 'mdi-keyboard', text: 'Go to the old version' },
       ],
     }),
-    methods:{
-        logout: function() {
-            localStorage.removeItem('token');
-            localStorage.removeItem('loggedIn');
-            this.$router.push('/login')
-                .then(res => {
-                    this.text = "Your are Logged Out Successfully";
-                    this.snackbar = true;
-                })
-                .catch(err => console.log(err))
-        },
-    }
   }
 </script>
+
+<style scoped>
+
+</style>

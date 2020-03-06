@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Role;
+use App\Profile;
 
 class AuthController extends Controller
 {
@@ -25,6 +26,8 @@ class AuthController extends Controller
         $validatedData['password'] = bcrypt($request->password);
 
         $user = User::create($validatedData);
+
+        $user->profile()->save(new Profile());
 
         $accessToken = $user->createToken('authToken')->accessToken;
 
