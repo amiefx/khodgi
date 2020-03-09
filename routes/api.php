@@ -28,6 +28,8 @@ Route::resource('/home-slides', 'Api\HomeSlideController');
 //Route::post('/home-slides/change-photoL', 'HomeSlideController@changePhotoL');
 //Route::post('/home-slides/change-photoS', 'HomeSlideController@changePhotoS');
 
+Route::resource('/home-sections', 'Api\HomeSectionController');
+
 Route::group(['middleware' => ['auth:api'], 'namespace'=>'Api'], function () {
     Route::resource('/roles', 'RolesController');
     Route::resource('/users', 'UserController');
@@ -43,6 +45,8 @@ Route::group(['middleware' => ['auth:api'], 'namespace'=>'Api'], function () {
     // Route::resource('/home-slides', 'HomeSlideController');
      Route::post('/home-slides/change-photoL', 'HomeSlideController@changePhotoL');
      Route::post('/home-slides/change-photoS', 'HomeSlideController@changePhotoS');
+
+     Route::post('/home-sections/change-photo', 'HomeSectionController@changePhoto');
 });
 
 Route::post('/password/email', 'Api\ForgotPasswordController@sendResetLinkEmail');

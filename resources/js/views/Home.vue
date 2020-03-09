@@ -138,51 +138,83 @@
 
       <v-container fluid>
 
-        <div class="grey lighten-5">
+        <div class=" hidden-xs-only">
             <v-row no-gutters>
-                <v-col cols="12" sm="4" md="4" lg="4" xl="4" class="my-5">
+                <v-col cols="12" sm="4" md="4" lg="4" xl="4" class="my-3 mx-auto"
+                    v-for="(item,i) in homesections"
+                    :key="i"
+                >
                     <v-hover v-slot:default="{ hover }">
+                        <v-card
+                        class="mx-3"
+                        color="grey lighten-4"
+                        :to="item.link"
+                        >
+                        <v-img
+                            :aspect-ratio="0.75"
+                            :src="item.image"
+                        >
+
+                        <v-expand-transition>
+                          <div
+                            v-if="hover"
+                            class="d-flex transition-fast-in-fast-out white darken-2 v-card--reveal display-3 black--text"
+                            style="height: 18%;"
+                          >
+                             <v-row>
+                               <v-col cols="12">
+                                 <h3 class="title text-uppercase orange--text text-center mt-5" >{{ item.name }}</h3>
+                                 <h3 class="subtitle-1 font-weight-light orange--text text-center mb-8" style="text-decoration: underline;"> Shop Now </h3>
+                               </v-col>
+                             </v-row>
+
+                          </div>
+                        </v-expand-transition>
+
+                        </v-img>
+
+                        </v-card>
+                    </v-hover>
+                </v-col>
+            </v-row>
+        </div>
+
+        <div class=" hidden-sm-and-up">
+            <v-row no-gutters>
+                <v-col cols="12" sm="4" md="4" lg="4" xl="4" class="my-3 mx-auto"
+                    v-for="(item,i) in homesections"
+                    :key="i"
+                >
+                    <v-hover v-slot:default="{  }">
                         <v-card
                         class="mx-auto"
                         color="grey lighten-4"
                         max-width="600"
+                        :to="item.link"
                         >
                         <v-img
-                            :aspect-ratio="16/9"
-                            src="https://cdn.vuetifyjs.com/images/cards/kitchen.png"
+                            :aspect-ratio="0.75"
+                            :src="item.image"
                         >
-                            <v-expand-transition>
-                            <div
-                                v-if="hover"
-                                class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
-                                style="height: 100%;"
-                            >
-                                $14.99
-                            </div>
-                            </v-expand-transition>
+
+                        <v-expand-transition>
+                          <div
+
+                            class="d-flex transition-fast-in-fast-out white darken-2 v-card--reveal display-3 black--text"
+                            style="height: 18%;"
+                          >
+                             <v-row>
+                               <v-col cols="12">
+                                 <h3 class="title text-uppercase orange--text text-center mt-5" >{{ item.name }}</h3>
+                                 <h3 class="subtitle-1 font-weight-light orange--text text-center mb-8" style="text-decoration: underline;"> Shop Now </h3>
+                               </v-col>
+                             </v-row>
+
+                          </div>
+                        </v-expand-transition>
+
                         </v-img>
-                        <v-card-text
-                            class="pt-6"
-                            style="position: relative;"
-                        >
-                            <v-btn
-                            absolute
-                            color="orange"
-                            class="white--text"
-                            fab
-                            large
-                            right
-                            top
-                            >
-                            <v-icon>mdi-cart</v-icon>
-                            </v-btn>
-                            <div class="font-weight-light grey--text title mb-2">For the perfect meal</div>
-                            <h3 class="display-1 font-weight-light orange--text mb-2">QW cooking utensils</h3>
-                            <div class="font-weight-light title mb-2">
-                            Our Vintage kitchen utensils delight any chef.<br>
-                            Made of bamboo by hand
-                            </div>
-                        </v-card-text>
+
                         </v-card>
                     </v-hover>
                 </v-col>
@@ -202,6 +234,8 @@
     data: () => ({
       dialog: false,
       drawer: false,
+      homeslides: [],
+      homesections: [],
       items: [
         { icon: 'mdi-contacts', text: 'Contacts' },
         { icon: 'mdi-history', text: 'Frequently contacted' },
@@ -235,11 +269,12 @@
         { icon: 'mdi-keyboard', text: 'Go to the old version' },
       ],
 
-      homeslides: [],
+
     }),
 
     created () {
       this.initialize()
+      this.loadHomeSections()
     },
 
     methods: {
@@ -247,7 +282,18 @@
             axios.get('/api/home-slides')
                 .then(res => {
                     this.homeslides = res.data.homeslides
-                    console.log(res.data.images)
+                })
+                .catch(err => {
+                    console.log();
+
+                })
+        },
+
+        loadHomeSections () {
+            axios.get('/api/home-sections')
+                .then(res => {
+                    this.homesections = res.data.homesections
+                    console.log(res)
                 })
                 .catch(err => {
                     console.log();
@@ -263,7 +309,7 @@
         align-items: center;
         bottom: 0;
         justify-content: center;
-        opacity: .5;
+        opacity: 1;
         position: absolute;
         width: 100%;
     }
