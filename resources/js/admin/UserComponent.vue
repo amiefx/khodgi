@@ -222,6 +222,8 @@
       uploadPhoto(item){
           if(this.editedItem.photo != null){
               const index = this.users.data.indexOf(item)
+              console.log(this.editedItem);
+
           let formData = new FormData();
           formData.append('photo', this.editedItem.photo, this.editedItem.photo.name)
           formData.append('user', item.id)

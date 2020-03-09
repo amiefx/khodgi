@@ -126,43 +126,69 @@
     </v-app-bar>
 
     <v-content>
-      <v-container
-        class="fill-height"
-        fluid
-      >
-        <v-row
-          align="center"
-          justify="center"
-        >
-          <v-tooltip right>
-            <template v-slot:activator="{ on }">
-              <v-btn
-                :href="source"
-                icon
-                large
-                target="_blank"
-                v-on="on"
-              >
-                <v-icon large>mdi-code-tags</v-icon>
-              </v-btn>
-            </template>
-            <span>Source</span>
-          </v-tooltip>
-          <v-tooltip right>
-            <template v-slot:activator="{ on }">
-              <v-btn
-                icon
-                large
-                href="https://codepen.io/johnjleider/pen/MNYLdL"
-                target="_blank"
-                v-on="on"
-              >
-                <v-icon large>mdi-codepen</v-icon>
-              </v-btn>
-            </template>
-            <span>Codepen</span>
-          </v-tooltip>
-        </v-row>
+
+        <v-carousel hide-delimiters>
+                <v-carousel-item
+                v-for="(item,i) in homeslides"
+                :key="i"
+                :src="item.large_image"
+                :to="item.link"
+                ></v-carousel-item>
+            </v-carousel>
+
+      <v-container fluid>
+
+        <div class="grey lighten-5">
+            <v-row no-gutters>
+                <v-col cols="12" sm="4" md="4" lg="4" xl="4" class="my-5">
+                    <v-hover v-slot:default="{ hover }">
+                        <v-card
+                        class="mx-auto"
+                        color="grey lighten-4"
+                        max-width="600"
+                        >
+                        <v-img
+                            :aspect-ratio="16/9"
+                            src="https://cdn.vuetifyjs.com/images/cards/kitchen.png"
+                        >
+                            <v-expand-transition>
+                            <div
+                                v-if="hover"
+                                class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
+                                style="height: 100%;"
+                            >
+                                $14.99
+                            </div>
+                            </v-expand-transition>
+                        </v-img>
+                        <v-card-text
+                            class="pt-6"
+                            style="position: relative;"
+                        >
+                            <v-btn
+                            absolute
+                            color="orange"
+                            class="white--text"
+                            fab
+                            large
+                            right
+                            top
+                            >
+                            <v-icon>mdi-cart</v-icon>
+                            </v-btn>
+                            <div class="font-weight-light grey--text title mb-2">For the perfect meal</div>
+                            <h3 class="display-1 font-weight-light orange--text mb-2">QW cooking utensils</h3>
+                            <div class="font-weight-light title mb-2">
+                            Our Vintage kitchen utensils delight any chef.<br>
+                            Made of bamboo by hand
+                            </div>
+                        </v-card-text>
+                        </v-card>
+                    </v-hover>
+                </v-col>
+            </v-row>
+        </div>
+
       </v-container>
     </v-content>
   </v-app>
@@ -208,10 +234,37 @@
         { icon: 'mdi-cellphone-link', text: 'App downloads' },
         { icon: 'mdi-keyboard', text: 'Go to the old version' },
       ],
+
+      homeslides: [],
     }),
+
+    created () {
+      this.initialize()
+    },
+
+    methods: {
+        initialize () {
+            axios.get('/api/home-slides')
+                .then(res => {
+                    this.homeslides = res.data.homeslides
+                    console.log(res.data.images)
+                })
+                .catch(err => {
+                    console.log();
+
+                })
+        }
+    }
   }
 </script>
 
 <style scoped>
-
+    .v-card--reveal {
+        align-items: center;
+        bottom: 0;
+        justify-content: center;
+        opacity: .5;
+        position: absolute;
+        width: 100%;
+    }
 </style>

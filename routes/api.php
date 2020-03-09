@@ -24,6 +24,10 @@ Route::get('/user', function (Request $request) {
 Route::post('/register', 'Api\AuthController@register');
 Route::post('/login', 'Api\AuthController@login');
 
+Route::resource('/home-slides', 'Api\HomeSlideController');
+//Route::post('/home-slides/change-photoL', 'HomeSlideController@changePhotoL');
+//Route::post('/home-slides/change-photoS', 'HomeSlideController@changePhotoS');
+
 Route::group(['middleware' => ['auth:api'], 'namespace'=>'Api'], function () {
     Route::resource('/roles', 'RolesController');
     Route::resource('/users', 'UserController');
@@ -35,6 +39,10 @@ Route::group(['middleware' => ['auth:api'], 'namespace'=>'Api'], function () {
     Route::post('change-photo', 'UserController@changePhoto');
     Route::get('my-account', 'UserController@myAccount');
     Route::put('user/update-profile/{id}', 'UserController@updateProfile');
+
+    // Route::resource('/home-slides', 'HomeSlideController');
+     Route::post('/home-slides/change-photoL', 'HomeSlideController@changePhotoL');
+     Route::post('/home-slides/change-photoS', 'HomeSlideController@changePhotoS');
 });
 
 Route::post('/password/email', 'Api\ForgotPasswordController@sendResetLinkEmail');

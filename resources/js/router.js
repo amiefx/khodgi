@@ -15,6 +15,8 @@ import RolesComponent from './admin/RolesComponent';
 import UserComponent from './admin/UserComponent';
 import Test from './admin/Test';
 
+import HomeSlide from './admin/HomeSlide';
+
 
 
 const routes = [
@@ -39,7 +41,8 @@ const routes = [
         path: '/admin', component: AdminComponent, name: 'Admin',
         children: [
              { path: 'roles', component: RolesComponent, name: 'Roles' },
-             { path: 'users', component: UserComponent, name: 'User' }
+             { path: 'users', component: UserComponent, name: 'User' },
+             { path: 'home-slides', component: HomeSlide, name: 'home.slides' }
         ],
         beforeEnter: (to, from, next) => {
             axios.get('/api/verify')
