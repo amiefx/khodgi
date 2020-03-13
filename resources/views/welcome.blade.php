@@ -10,7 +10,6 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-
     </head>
     <body>
         <div id="app">
@@ -18,5 +17,6 @@
         </div>
 
         <script src="{{asset('js/app.js')}}"></script>
+
     </body>
 </html>

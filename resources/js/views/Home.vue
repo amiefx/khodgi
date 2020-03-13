@@ -309,7 +309,7 @@
         align-items: center;
         bottom: 0;
         justify-content: center;
-        opacity: 1;
+        opacity: 0.9;
         position: absolute;
         width: 100%;
     }

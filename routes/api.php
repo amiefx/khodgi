@@ -21,8 +21,15 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::resource('/attribute-sets', 'Api\AttributeSetsController');
+
 Route::post('/register', 'Api\AuthController@register');
 Route::post('/login', 'Api\AuthController@login');
+
+Route::resource('/categories', 'Api\CategoriesController');
+
+Route::get('/attribs', 'Api\AttributeSetsController@attribs');
+Route::get('/subattribs/{attribute_set}', 'Api\AttributeSetsController@subattribs');
 
 Route::resource('/home-slides', 'Api\HomeSlideController');
 //Route::post('/home-slides/change-photoL', 'HomeSlideController@changePhotoL');
@@ -47,6 +54,9 @@ Route::group(['middleware' => ['auth:api'], 'namespace'=>'Api'], function () {
      Route::post('/home-slides/change-photoS', 'HomeSlideController@changePhotoS');
 
      Route::post('/home-sections/change-photo', 'HomeSectionController@changePhoto');
+
+   //  Route::resource('/attribute-sets', 'AttributeSetsController');
+     Route::resource('/attributes', 'AttributesController');
 });
 
 Route::post('/password/email', 'Api\ForgotPasswordController@sendResetLinkEmail');

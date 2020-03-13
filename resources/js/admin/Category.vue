@@ -3,13 +3,13 @@
 <div>
   <v-data-table
     :headers="headers"
-    :items="roles"
+    :items="categories"
     sort-by="id"
     class="elevation-1"
   >
     <template v-slot:top>
       <v-toolbar flat color="white">
-        <v-toolbar-title>User Role</v-toolbar-title>
+        <v-toolbar-title>Categories</v-toolbar-title>
         <v-divider
           class="mx-4"
           inset
@@ -18,7 +18,7 @@
         <v-spacer></v-spacer>
         <v-dialog v-model="dialog" max-width="500px">
           <template v-slot:activator="{ on }">
-            <v-btn color="primary" dark class="mb-2" v-on="on">New Role</v-btn>
+            <v-btn color="primary" dark class="mb-2" v-on="on">New Category</v-btn>
           </template>
           <v-card>
             <v-card-title>
@@ -29,20 +29,13 @@
               <v-container>
                 <v-row>
                   <v-col cols="12" sm="12" md="12">
-                    <v-text-field v-model="editedItem.name" label="Role Name"></v-text-field>
+                    <v-text-field v-model="editedItem.name" label="Name"></v-text-field>
+                    <v-text-field v-model="editedItem.parent_id" label="Parent ID"></v-text-field>
+                    <v-text-field v-model="editedItem.link" label="Link"></v-text-field>
+                    <v-text-field v-model="editedItem.icon" label="Icon"></v-text-field>
+                    <v-text-field v-model="editedItem.is_active" label="IsActive"></v-text-field>
+                    <v-text-field v-model="editedItem.sort_id" label="Sort ID"></v-text-field>
                   </v-col>
-                  <!-- <v-col cols="12" sm="6" md="4">
-                    <v-text-field v-model="editedItem.calories" label="Calories"></v-text-field>
-                  </v-col>
-                  <v-col cols="12" sm="6" md="4">
-                    <v-text-field v-model="editedItem.fat" label="Fat (g)"></v-text-field>
-                  </v-col>
-                  <v-col cols="12" sm="6" md="4">
-                    <v-text-field v-model="editedItem.carbs" label="Carbs (g)"></v-text-field>
-                  </v-col>
-                  <v-col cols="12" sm="6" md="4">
-                    <v-text-field v-model="editedItem.protein" label="Protein (g)"></v-text-field>
-                  </v-col> -->
                 </v-row>
               </v-container>
             </v-card-text>
@@ -104,24 +97,39 @@
           sortable: false,
           value: 'id',
         },
-        { text: 'Role', value: 'name' },
+        { text: 'Name', value: 'name' },
+        { text: 'Parent ID', value: 'parent_id' },
+        { text: 'Link', value: 'link' },
+        { text: 'Icon', value: 'icon' },
+        { text: 'IsActive', value: 'is_active' },
+        { text: 'Sort ID', value: 'sort_id' },
         { text: 'Actions', value: 'action', sortable: false },
       ],
-      roles: [],
+      categories: [],
       editedIndex: -1,
       editedItem: {
         id: '',
         name: '',
+        parent_id: '',
+        link: '',
+        icon: '',
+        is_active: '',
+        sort_id: '',
       },
       defaultItem: {
         id: '',
         name: '',
+        parent_id: '',
+        link: '',
+        icon: '',
+        is_active: '',
+        sort_id: '',
       },
     }),
 
     computed: {
       formTitle () {
-        return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+        return this.editedIndex === -1 ? 'New Category' : 'Edit Category'
       },
     },
 
@@ -155,29 +163,27 @@
                 return Promise.reject(error);
             });
 
-            axios.get('/api/roles')
-                .then(res => this.roles = res.data.roles)
+            axios.get('/api/categories')
+                .then(res => this.categories = res.data.data)
                 .catch(err => {
-                    if(err.response.status == 401)
-                    localStorage.removeItem('token');
-                    this.$router.push('/login');
+                    console.log(err)
                 })
       },
 
       editItem (item) {
-        this.editedIndex = this.roles.indexOf(item)
+        this.editedIndex = this.categories.indexOf(item)
         this.editedItem = Object.assign({}, item)
         this.dialog = true
       },
 
       deleteItem (item) {
-        const index = this.roles.indexOf(item)
+        const index = this.categories.indexOf(item)
         let decide = confirm('Are you sure you want to delete this item?')
         if(decide){
-            axios.delete('/api/roles/'+item.id)
+            axios.delete('/api/categories/'+item.id)
             .then(res => {
                 this.snackbar = true
-                this.roles.splice(index, 1)
+                this.categories.splice(index, 1)
             })
             .catch(err => console.log(err.response))
         }
@@ -193,13 +199,13 @@
 
       save () {
         if (this.editedIndex > -1) {
-            axios.put('/api/roles/'+this.editedItem.id, {'name': this.editedItem.name})
-             //   .then(res => Object.assign(this.roles[this.editedIndex], res.data.role))
+            axios.put('/api/categories/'+this.editedItem.id, this.editedItem)
+             //   .then(res => Object.assign(this.roles[this.editedIndex], res.data.attribute_set))
               //  .catch(err => console.log(err.response))
-          Object.assign(this.roles[this.editedIndex], this.editedItem)
+          Object.assign(this.categories[this.editedIndex], this.editedItem)
         } else {
-            axios.post('/api/roles', {'name': this.editedItem.name})
-                .then(res => this.roles.push(res.data.role))
+            axios.post('/api/categories', this.editedItem)
+                .then(res => this.categories.push(res.data.category))
                 .catch(err => console.dir(err.response))
         }
         this.close()

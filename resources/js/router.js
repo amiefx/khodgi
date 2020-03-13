@@ -13,7 +13,11 @@ import Profile from './account/Profile';
 import AdminComponent from './admin/AdminComponent';
 import RolesComponent from './admin/RolesComponent';
 import UserComponent from './admin/UserComponent';
+import AttributeSets from './admin/AttributeSets';
+import Attribute from './admin/Attribute';
+import Category from './admin/Category';
 import Test from './admin/Test';
+import Test2 from './admin/Test2';
 
 import HomeSlide from './admin/HomeSlide';
 import HomeSection from './admin/HomeSection';
@@ -23,6 +27,7 @@ import HomeSection from './admin/HomeSection';
 const routes = [
     { path: '/', component: Home, name: 'home' },
     { path: '/test', component: Test, name: 'test' },
+    { path: '/test2', component: Test2, name: 'test2' },
     { path: '/login', component: LoginComponent, name: 'Login' },
     { path: '/register', component: RegisterComponent, name: 'Register' },
     { path: '/forgotpassword', component: ForgotpasswordComponent, name: 'Forgotpassword' },
@@ -44,7 +49,10 @@ const routes = [
              { path: 'roles', component: RolesComponent, name: 'Roles' },
              { path: 'users', component: UserComponent, name: 'User' },
              { path: 'home-slides', component: HomeSlide, name: 'home.slides' },
-             { path: 'home-sections', component: HomeSection, name: 'home.sections' }
+             { path: 'home-sections', component: HomeSection, name: 'home.sections' },
+             { path: 'attribute-sets', component: AttributeSets, name: 'attribute.sets' },
+             { path: 'attributes', component: Attribute, name: 'attributes' },
+             { path: 'categories', component: Category, name: 'categories' },
         ],
         beforeEnter: (to, from, next) => {
             axios.get('/api/verify')
