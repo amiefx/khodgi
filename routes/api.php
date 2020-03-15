@@ -57,6 +57,8 @@ Route::group(['middleware' => ['auth:api'], 'namespace'=>'Api'], function () {
 
    //  Route::resource('/attribute-sets', 'AttributeSetsController');
      Route::resource('/attributes', 'AttributesController');
+
+     Route::resource('/products', 'ProductsController');
 });
 
 Route::post('/password/email', 'Api\ForgotPasswordController@sendResetLinkEmail');

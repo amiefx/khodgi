@@ -3904,6 +3904,960 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/admin/ProductComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/admin/ProductComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      date: null,
+      menu_special_price_start: null,
+      menu_special_price_end: null,
+      menu_new_from: null,
+      menu_new_to: null,
+      trip: {
+        name: "",
+        location: null,
+        start: null,
+        end: null
+      },
+      locations: ["Australia", "Barbados", "Chile", "Denmark", "Equador", "France"],
+      // size_attribs: [
+      //   {
+      //     attribute_set: "",
+      //     attribute: "",
+      //     xs: "",
+      //     s: "",
+      //     m: "",
+      //     l: "",
+      //     xl: ""
+      //   }
+      // ],
+      attrib: "",
+      attribs: [],
+      subattrib: "",
+      subattribs: [],
+      // demo about
+      valid: true,
+      dialog: false,
+      loading: false,
+      snackbar: false,
+      text: "",
+      roles: [],
+      success: "",
+      error: "",
+      categories: [],
+      options: {
+        sortBy: ["name"],
+        sortDesc: [true]
+      },
+      rules: {
+        required: function required(v) {
+          return !!v || "This Field is Required";
+        },
+        min: function min(v) {
+          return v.length >= 5 || "Minimum 5 Chracters Required";
+        },
+        validEmail: function validEmail(v) {
+          return /.+@.+\..+/.test(v) || "Email must be valid";
+        }
+      },
+      headers: [{
+        text: "#",
+        value: "id"
+      }, {
+        text: "Thumbnail",
+        value: "image1"
+      }, {
+        text: "Name",
+        value: "name"
+      }, {
+        text: "Price",
+        value: "price_pkr"
+      }, {
+        text: "Status",
+        value: "isActive"
+      }, {
+        text: "Created",
+        value: "created_at"
+      }, {
+        text: "Actions",
+        value: "action",
+        sortable: false
+      }],
+      products: [],
+      editedIndex: -1,
+      editedItem: {
+        id: "",
+        name: "",
+        category_id: "",
+        description: "",
+        isActive: "",
+        price_pkr: "",
+        price_usd: "",
+        price_aud: "",
+        price_eur: "",
+        price_gbp: "",
+        special_price_percentage: "",
+        special_price_start: "",
+        special_price_end: "",
+        manage_inventory: "",
+        quantity: "",
+        image1: null,
+        image2: null,
+        image3: null,
+        image4: null,
+        new_from: "",
+        new_to: "",
+        created_at: "",
+        size_attribs: [{
+          attribute_set: "",
+          attribute: "",
+          xs: "",
+          s: "",
+          m: "",
+          l: "",
+          xl: ""
+        }]
+      },
+      defaultItem: {
+        id: "",
+        name: "",
+        category_id: "",
+        description: "",
+        isActive: "",
+        price_pkr: "",
+        price_usd: "",
+        price_aud: "",
+        price_eur: "",
+        price_gbp: "",
+        special_price_percentage: "",
+        special_price_start: "",
+        special_price_end: "",
+        manage_inventory: "",
+        quantity: "",
+        image1: "",
+        image2: "",
+        image3: "",
+        image4: "",
+        new_from: "",
+        new_to: "",
+        created_at: ""
+      }
+    };
+  },
+  computed: {
+    formTitle: function formTitle() {
+      return this.editedIndex === -1 ? "New Product" : "Edit Product";
+    },
+    passwordMatch: function passwordMatch() {
+      return this.editedItem.password != this.editedItem.rpassword ? "Password does Not Match" : true;
+    }
+  },
+  watch: {
+    dialog: function dialog(val) {
+      val || this.close();
+    }
+  },
+  created: function created() {
+    var _this = this;
+
+    this.initialize();
+    axios.get("/api/attributes").then(function (res) {
+      _this.subattribs = res.data.attributes;
+      console.log(res);
+    });
+    axios.get("/api/categories").then(function (res) {
+      _this.categories = res.data.data;
+      console.log(res);
+    });
+  },
+  methods: {
+    uploadImage1: function uploadImage1(e) {
+      var _this2 = this;
+
+      var file = e.target.files[0]; // console.log(file);
+
+      var reader = new FileReader();
+
+      if (file['size'] < 1000000) {
+        reader.onloadend = function (file) {
+          //  console.log('RESULT', reader.result)
+          _this2.editedItem.image1 = reader.result;
+        };
+
+        reader.readAsDataURL(file);
+      } else {
+        this.text = 'Image size is greater than 1MB.';
+        this.snackbar = true;
+      }
+    },
+    uploadImage2: function uploadImage2(e) {
+      var _this3 = this;
+
+      var file = e.target.files[0]; // console.log(file);
+
+      var reader = new FileReader();
+
+      if (file['size'] < 1000000) {
+        reader.onloadend = function (file) {
+          //  console.log('RESULT', reader.result)
+          _this3.editedItem.image2 = reader.result;
+        };
+
+        reader.readAsDataURL(file);
+      } else {
+        this.text = 'Image size is greater than 1MB.';
+        this.snackbar = true;
+      }
+    },
+    uploadImage3: function uploadImage3(e) {
+      var _this4 = this;
+
+      var file = e.target.files[0]; // console.log(file);
+
+      var reader = new FileReader();
+
+      if (file['size'] < 1000000) {
+        reader.onloadend = function (file) {
+          //  console.log('RESULT', reader.result)
+          _this4.editedItem.image3 = reader.result;
+        };
+
+        reader.readAsDataURL(file);
+      } else {
+        this.text = 'Image size is greater than 1MB.';
+        this.snackbar = true;
+      }
+    },
+    uploadImage4: function uploadImage4(e) {
+      var _this5 = this;
+
+      var file = e.target.files[0]; // console.log(file);
+
+      var reader = new FileReader();
+
+      if (file['size'] < 1000000) {
+        reader.onloadend = function (file) {
+          //  console.log('RESULT', reader.result)
+          _this5.editedItem.image4 = reader.result;
+        };
+
+        reader.readAsDataURL(file);
+      } else {
+        this.text = 'Image size is greater than 1MB.';
+        this.snackbar = true;
+      }
+    },
+    uploadPhoto: function uploadPhoto(item) {
+      var _this6 = this;
+
+      if (this.editedItem.photo != null) {
+        var index = this.products.data.indexOf(item);
+        console.log(this.editedItem);
+        var formData = new FormData();
+        formData.append("photo", this.editedItem.photo, this.editedItem.photo.name);
+        formData.append("user", item.id);
+        axios.post("/api/change-photo", formData).then(function (res) {
+          _this6.products.data[index].photo = res.data.user.photo;
+          _this6.editedItem.photo = null;
+        })["catch"](function (err) {
+          return console.log(err.response);
+        });
+      }
+    },
+    updateRole: function updateRole(item) {
+      var _this7 = this;
+
+      var index = this.products.data.indexOf(item);
+      axios.post("/api/change-role", {
+        role: item.role,
+        user: item.id
+      }).then(function (res) {
+        // this.products.data[index].role = res.data.user.role
+        _this7.text = res.data.user.name + "'s Role Updated to " + res.data.user.role;
+        _this7.snackbar = true;
+      })["catch"](function (error) {
+        _this7.text = error.response.data.user.name + "'s Role Cannot be Updated" + error.response.data.user.role;
+        _this7.products.data[index].role = error.response.data.user.role;
+        _this7.snackbar = true;
+        console.dir(error.response);
+      });
+    },
+    checkEmail: function checkEmail() {
+      var _this8 = this;
+
+      if (/.+@.+\..+/.test(this.editedItem.email)) {
+        axios.post("/api/email/verify", {
+          email: this.editedItem.email
+        }).then(function (res) {
+          _this8.success = res.data.message;
+          _this8.error = "";
+        })["catch"](function (err) {
+          _this8.success = "", _this8.error = "Email Already Exists";
+        });
+      }
+    },
+    selectAll: function selectAll(e) {
+      this.selected = [];
+
+      if (e.length > 0) {
+        this.selected = e.map(function (val) {
+          return val.id;
+        });
+      }
+
+      console.dir(this.selected);
+    },
+    deleteAll: function deleteAll() {
+      var _this9 = this;
+
+      var decide = confirm("Are you sure you want to delete these items?");
+
+      if (decide) {
+        axios.post("/api/products/delete", {
+          products: this.selected
+        }).then(function (res) {
+          _this9.text = "Rcords Deleted Successfully!";
+
+          _this9.selected.map(function (val) {
+            var index = _this9.products.data.indexOf(val);
+
+            _this9.products.data.splice(index, 1);
+          });
+
+          _this9.snackbar = true;
+        })["catch"](function (err) {
+          console.log(err.response);
+          _this9.text = "Error Deleting Record";
+          _this9.snackbar = true;
+        });
+      }
+    },
+    searchIt: function searchIt(e) {
+      var _this10 = this;
+
+      if (e.length > 3) {
+        axios.get("/api/products/".concat(e)).then(function (res) {
+          return _this10.products = res.data.users;
+        })["catch"](function (err) {
+          return console.dir(err.response);
+        });
+      }
+
+      if (e.length <= 0) {
+        // axios.get(`/api/users?page=${e.page}`,{params:{'per_page': e.itemsPerPage}})
+        //   axios.get(`/api/users`)
+        //     .then(res => this.users = res.data.users)
+        //     .catch(err => console.dir(err.response))
+        var sortBy = this.options.sortBy.length == 0 ? "name" : this.options.sortBy[0];
+        var orderBy = this.options.sortDesc.length > 0 || this.options.sortDesc[0] ? "asc" : "desc";
+        axios.get("/api/products?page=".concat(e.page), {
+          params: {
+            per_page: e.itemsPerPage,
+            sort_by: sortBy,
+            order_by: orderBy
+          }
+        }).then(function (res) {
+          _this10.products = res.data.products;
+        })["catch"](function (err) {
+          return console.dir(err.response);
+        });
+      }
+    },
+    paginate: function paginate(e) {
+      var _this11 = this;
+
+      var sortBy = this.options.sortBy.length == 0 ? "name" : this.options.sortBy[0];
+      var orderBy = this.options.sortDesc.length > 0 || this.options.sortDesc[0] ? "asc" : "desc";
+      axios.get("/api/products?page=".concat(e.page), {
+        params: {
+          per_page: e.itemsPerPage,
+          sort_by: sortBy,
+          order_by: orderBy
+        }
+      }).then(function (res) {
+        _this11.products = res.data.products;
+        console.log(res);
+      })["catch"](function (err) {
+        if (err.response.status == 401) localStorage.removeItem("token");
+
+        _this11.$router.push("/login");
+      });
+    },
+    initialize: function initialize() {
+      var _this12 = this;
+
+      // Add a request interceptor
+      axios.interceptors.request.use(function (config) {
+        _this12.loading = true;
+        return config;
+      }, function (error) {
+        _this12.loading = false;
+        return Promise.reject(error);
+      }); // Add a response interceptor
+
+      axios.interceptors.response.use(function (response) {
+        _this12.loading = false;
+        return response;
+      }, function (error) {
+        _this12.loading = false;
+        return Promise.reject(error);
+      });
+    },
+    editItem: function editItem(item) {
+      this.editedIndex = this.products.data.indexOf(item);
+      this.editedItem = Object.assign({}, item);
+      this.dialog = true;
+    },
+    deleteItem: function deleteItem(item) {
+      var _this13 = this;
+
+      var index = this.products.data.indexOf(item);
+      var decide = confirm("Are you sure you want to delete this item?");
+
+      if (decide) {
+        axios["delete"]("/api/products/" + item.id).then(function (res) {
+          _this13.snackbar = true;
+
+          _this13.products.data.splice(index, 1);
+        })["catch"](function (err) {
+          console.log(err.response);
+          _this13.text = "Error Deleting Record";
+          _this13.snackbar = true;
+        });
+      }
+    },
+    close: function close() {
+      var _this14 = this;
+
+      this.dialog = false;
+      setTimeout(function () {
+        _this14.editedItem = Object.assign({}, _this14.defaultItem);
+        _this14.editedIndex = -1;
+      }, 300);
+    },
+    save: function save() {
+      var _this15 = this;
+
+      if (this.editedIndex > -1) {
+        var index = this.editedIndex;
+        axios.put("/api/products/" + this.editedItem.id, this.editedItem) //  .then(res => Object.assign(this.users[this.editedIndex], this.editedItem))
+        .then(function (res) {
+          _this15.text = "Record Updated Successfully!";
+          _this15.snackbar = true;
+          Object.assign(_this15.products.data[index], res.data.product);
+        })["catch"](function (err) {
+          console.log(err.response);
+          _this15.text = "Error Updating Record";
+          _this15.snackbar = true;
+        }); //  Object.assign(this.products.data[this.editedIndex], this.editedItem)
+      } else {
+        axios.post("/api/products", this.editedItem).then(function (res) {
+          _this15.text = "Record Added Successfully!";
+          _this15.snackbar = true;
+
+          _this15.products.data.push(res.data.product);
+        })["catch"](function (err) {
+          console.dir(err);
+          _this15.text = "Error Inserting Record";
+          _this15.snackbar = true;
+        });
+      }
+
+      this.close();
+    },
+    deleteRow: function deleteRow(index, size_attrib) {
+      var idx = this.editedItem.size_attribs.indexOf(size_attrib);
+      console.log(idx, index);
+
+      if (idx > -1) {
+        this.editedItem.size_attribs.splice(idx, 1);
+      }
+    },
+    addNewRow: function addNewRow() {
+      this.editedItem.size_attribs.push({
+        attribute: "",
+        xs: "",
+        s: "",
+        m: "",
+        l: "",
+        xl: ""
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/admin/RolesComponent.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/admin/RolesComponent.vue?vue&type=script&lang=js& ***!
@@ -4293,9 +5247,404 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      date: null,
+      date2: null,
+      menu2: null,
+      menu3: null,
+      trip: {
+        name: "",
+        location: null,
+        start: null,
+        end: null
+      },
+      locations: ["Australia", "Barbados", "Chile", "Denmark", "Equador", "France"],
+      size_attribs: [{
+        attribute_set: "",
+        attribute: "",
+        xs: "",
+        s: "",
+        m: "",
+        l: "",
+        xl: ""
+      }],
       attrib: "",
       attribs: [],
       subattrib: "",
@@ -4303,25 +5652,54 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.loadAttribs();
+    // this.loadAttribs();
+    this.locadSubAttributes();
   },
   methods: {
-    loadAttribs: function loadAttribs() {
+    // loadAttribs() {
+    //   axios
+    //     .get("/api/attribute-sets")
+    //     .then(res => {
+    //       this.attribs = res.data.data;
+    //     })
+    //     .catch(err => {
+    //       console.log(err);
+    //     });
+    // },
+    locadSubAttributes: function locadSubAttributes() {
       var _this = this;
 
-      axios.get("/api/attribute-sets").then(function (res) {
-        _this.attribs = res.data.data;
-      })["catch"](function (err) {
-        console.log(err);
+      //locadSubAttributes(index, size_attrib) {
+      //  var idx = this.size_attribs.indexOf(size_attrib);
+      //  console.log(idx)
+      //   axios
+      //     .get(`/api/subattribs/${this.size_attribs[idx].attribute_set}`)
+      //     .then(res => {
+      //       this.subattribs = res.data;
+      //     })
+      //     .catch(err => console.log(err));
+      axios.get('/api/attributes').then(function (res) {
+        _this.subattribs = res.data.attributes;
+        console.log(res);
       });
     },
-    locadSubAttributes: function locadSubAttributes() {
-      var _this2 = this;
+    deleteRow: function deleteRow(index, size_attrib) {
+      var idx = this.size_attribs.indexOf(size_attrib);
+      console.log(idx, index);
 
-      axios.get("/api/subattribs/".concat(this.attrib)).then(function (res) {
-        _this2.subattribs = res.data;
-      })["catch"](function (err) {
-        return console.log(err);
+      if (idx > -1) {
+        this.size_attribs.splice(idx, 1);
+      }
+    },
+    addNewRow: function addNewRow() {
+      this.size_attribs.push({
+        attribute_set: "",
+        attribute: "",
+        xs: "",
+        s: "",
+        m: "",
+        l: "",
+        xl: ""
       });
     }
   }
@@ -44013,6 +45391,2397 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/admin/ProductComponent.vue?vue&type=template&id=6437bea8&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/admin/ProductComponent.vue?vue&type=template&id=6437bea8& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-data-table",
+    {
+      staticClass: "elevation-1",
+      attrs: {
+        headers: _vm.headers,
+        items: _vm.products.data,
+        "items-per-page": 5,
+        "item-key": "id",
+        loading: _vm.loading,
+        options: _vm.options,
+        "server-items-length": _vm.products.total,
+        "loading-text": "Loading.. Please Wait!",
+        "show-select": "",
+        "footer-props": {
+          itemsPerPageOptions: [5, 10, 15],
+          "show-current-page": true,
+          "show-first-last-page": true
+        }
+      },
+      on: {
+        pagination: _vm.paginate,
+        "update:options": function($event) {
+          _vm.options = $event
+        },
+        input: _vm.selectAll
+      },
+      scopedSlots: _vm._u([
+        {
+          key: "top",
+          fn: function() {
+            return [
+              _c(
+                "v-toolbar",
+                { attrs: { flat: "", color: "" } },
+                [
+                  _c("v-toolbar-title", [_vm._v("Products")]),
+                  _vm._v(" "),
+                  _c("v-divider", {
+                    staticClass: "mx-4",
+                    attrs: { inset: "", vertical: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-dialog",
+                    {
+                      attrs: { "max-width": "900px" },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var on = ref.on
+                            return [
+                              _c(
+                                "v-btn",
+                                _vm._g(
+                                  {
+                                    staticClass: "mb-2",
+                                    attrs: { color: "primary", dark: "" }
+                                  },
+                                  on
+                                ),
+                                [_vm._v("New Product")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass: "mb-2 mr-2",
+                                  attrs: { color: "error", dark: "" },
+                                  on: { click: _vm.deleteAll }
+                                },
+                                [_vm._v("Delete")]
+                              )
+                            ]
+                          }
+                        }
+                      ]),
+                      model: {
+                        value: _vm.dialog,
+                        callback: function($$v) {
+                          _vm.dialog = $$v
+                        },
+                        expression: "dialog"
+                      }
+                    },
+                    [
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        [
+                          _c("v-card-title", [
+                            _c("span", { staticClass: "headline" }, [
+                              _vm._v(_vm._s(_vm.formTitle))
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "v-form",
+                            {
+                              attrs: { method: "post" },
+                              on: {
+                                submit: function($event) {
+                                  $event.stopPropagation()
+                                  $event.preventDefault()
+                                  return _vm.save($event)
+                                }
+                              },
+                              model: {
+                                value: _vm.valid,
+                                callback: function($$v) {
+                                  _vm.valid = $$v
+                                },
+                                expression: "valid"
+                              }
+                            },
+                            [
+                              _c(
+                                "v-card-text",
+                                [
+                                  _c(
+                                    "v-container",
+                                    [
+                                      _c(
+                                        "v-expansion-panels",
+                                        [
+                                          _c(
+                                            "v-expansion-panel",
+                                            [
+                                              _c("v-expansion-panel-header", {
+                                                scopedSlots: _vm._u([
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var open = ref.open
+                                                      return [
+                                                        _c(
+                                                          "v-row",
+                                                          {
+                                                            attrs: {
+                                                              "no-gutters": ""
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                attrs: {
+                                                                  cols: "4"
+                                                                }
+                                                              },
+                                                              [
+                                                                _vm._v(
+                                                                  "General"
+                                                                )
+                                                              ]
+                                                            ),
+                                                            _vm._v(" "),
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                staticClass:
+                                                                  "text--secondary",
+                                                                attrs: {
+                                                                  cols: "8"
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "v-fade-transition",
+                                                                  {
+                                                                    attrs: {
+                                                                      "leave-absolute":
+                                                                        ""
+                                                                    }
+                                                                  }
+                                                                )
+                                                              ],
+                                                              1
+                                                            )
+                                                          ],
+                                                          1
+                                                        )
+                                                      ]
+                                                    }
+                                                  }
+                                                ])
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-expansion-panel-content",
+                                                [
+                                                  _c(
+                                                    "v-row",
+                                                    {
+                                                      staticClass:
+                                                        "d-flex justify-space-around",
+                                                      attrs: {
+                                                        "no-gutters": ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-col",
+                                                        {
+                                                          attrs: {
+                                                            cols: "12",
+                                                            sm: "5",
+                                                            md: "5",
+                                                            lg: "5",
+                                                            xl: "5"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("v-text-field", {
+                                                            attrs: {
+                                                              label: "Name"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .name,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "name",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.name"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("v-select", {
+                                                            attrs: {
+                                                              items:
+                                                                _vm.categories,
+                                                              "item-text":
+                                                                "name",
+                                                              "item-value":
+                                                                "id",
+                                                              label: "Category"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .category_id,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "category_id",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.category_id"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("v-checkbox", {
+                                                            attrs: {
+                                                              label: "isActive"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .isActive,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "isActive",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.isActive"
+                                                            }
+                                                          })
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c("v-divider", {
+                                                        staticClass:
+                                                          "mx-4 hidden-xs-only",
+                                                        attrs: { vertical: "" }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-col",
+                                                        {
+                                                          attrs: {
+                                                            cols: "12",
+                                                            sm: "5",
+                                                            md: "5",
+                                                            lg: "5",
+                                                            xl: "5"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("vue-simplemde", {
+                                                            ref:
+                                                              "markdownEditor",
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .description,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "description",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.description"
+                                                            }
+                                                          })
+                                                        ],
+                                                        1
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-expansion-panel",
+                                            [
+                                              _c("v-expansion-panel-header", {
+                                                scopedSlots: _vm._u([
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var open = ref.open
+                                                      return [
+                                                        _c(
+                                                          "v-row",
+                                                          {
+                                                            attrs: {
+                                                              "no-gutters": ""
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                attrs: {
+                                                                  cols: "4"
+                                                                }
+                                                              },
+                                                              [_vm._v("Price")]
+                                                            ),
+                                                            _vm._v(" "),
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                staticClass:
+                                                                  "text--secondary",
+                                                                attrs: {
+                                                                  cols: "8"
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "v-fade-transition",
+                                                                  {
+                                                                    attrs: {
+                                                                      "leave-absolute":
+                                                                        ""
+                                                                    }
+                                                                  }
+                                                                )
+                                                              ],
+                                                              1
+                                                            )
+                                                          ],
+                                                          1
+                                                        )
+                                                      ]
+                                                    }
+                                                  }
+                                                ])
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-expansion-panel-content",
+                                                [
+                                                  _c(
+                                                    "v-row",
+                                                    {
+                                                      staticClass:
+                                                        "d-flex justify-space-around",
+                                                      attrs: {
+                                                        "no-gutters": ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-col",
+                                                        {
+                                                          attrs: {
+                                                            cols: "12",
+                                                            sm: "5",
+                                                            md: "5",
+                                                            lg: "5",
+                                                            xl: "5"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("v-text-field", {
+                                                            attrs: {
+                                                              label: "Price PKR"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .price_pkr,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "price_pkr",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.price_pkr"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("v-text-field", {
+                                                            attrs: {
+                                                              label: "Price USD"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .price_usd,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "price_usd",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.price_usd"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("v-text-field", {
+                                                            attrs: {
+                                                              label: "Price AUD"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .price_aud,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "price_aud",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.price_aud"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("v-text-field", {
+                                                            attrs: {
+                                                              label: "Price EUR"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .price_eur,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "price_eur",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.price_eur"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("v-text-field", {
+                                                            attrs: {
+                                                              label: "Price GBP"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .price_gbp,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "price_gbp",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.price_gbp"
+                                                            }
+                                                          })
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c("v-divider", {
+                                                        staticClass:
+                                                          "mx-4 hidden-xs-only",
+                                                        attrs: { vertical: "" }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-col",
+                                                        {
+                                                          attrs: {
+                                                            cols: "12",
+                                                            sm: "5",
+                                                            md: "5",
+                                                            lg: "5",
+                                                            xl: "5"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("v-text-field", {
+                                                            attrs: {
+                                                              label:
+                                                                "Special Price % OFF"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .special_price_percentage,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "special_price_percentage",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.special_price_percentage"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "v-menu",
+                                                            {
+                                                              attrs: {
+                                                                "close-on-content-click": false,
+                                                                "nudge-right": 40,
+                                                                transition:
+                                                                  "scale-transition",
+                                                                "offset-y": "",
+                                                                "min-width":
+                                                                  "290px"
+                                                              },
+                                                              scopedSlots: _vm._u(
+                                                                [
+                                                                  {
+                                                                    key:
+                                                                      "activator",
+                                                                    fn: function(
+                                                                      ref
+                                                                    ) {
+                                                                      var on =
+                                                                        ref.on
+                                                                      return [
+                                                                        _c(
+                                                                          "v-text-field",
+                                                                          _vm._g(
+                                                                            {
+                                                                              attrs: {
+                                                                                label:
+                                                                                  "Special Price Start",
+                                                                                "prepend-icon":
+                                                                                  "mdi-calendar-month",
+                                                                                readonly:
+                                                                                  ""
+                                                                              },
+                                                                              model: {
+                                                                                value:
+                                                                                  _vm
+                                                                                    .editedItem
+                                                                                    .special_price_start,
+                                                                                callback: function(
+                                                                                  $$v
+                                                                                ) {
+                                                                                  _vm.$set(
+                                                                                    _vm.editedItem,
+                                                                                    "special_price_start",
+                                                                                    $$v
+                                                                                  )
+                                                                                },
+                                                                                expression:
+                                                                                  "editedItem.special_price_start"
+                                                                              }
+                                                                            },
+                                                                            on
+                                                                          )
+                                                                        )
+                                                                      ]
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              ),
+                                                              model: {
+                                                                value:
+                                                                  _vm.menu_special_price_start,
+                                                                callback: function(
+                                                                  $$v
+                                                                ) {
+                                                                  _vm.menu_special_price_start = $$v
+                                                                },
+                                                                expression:
+                                                                  "menu_special_price_start"
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(" "),
+                                                              _c(
+                                                                "v-date-picker",
+                                                                {
+                                                                  on: {
+                                                                    input: function(
+                                                                      $event
+                                                                    ) {
+                                                                      _vm.menu_special_price_start = false
+                                                                    }
+                                                                  },
+                                                                  model: {
+                                                                    value:
+                                                                      _vm
+                                                                        .editedItem
+                                                                        .special_price_start,
+                                                                    callback: function(
+                                                                      $$v
+                                                                    ) {
+                                                                      _vm.$set(
+                                                                        _vm.editedItem,
+                                                                        "special_price_start",
+                                                                        $$v
+                                                                      )
+                                                                    },
+                                                                    expression:
+                                                                      "editedItem.special_price_start"
+                                                                  }
+                                                                }
+                                                              )
+                                                            ],
+                                                            1
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "v-menu",
+                                                            {
+                                                              attrs: {
+                                                                "close-on-content-click": false,
+                                                                "nudge-right": 40,
+                                                                transition:
+                                                                  "scale-transition",
+                                                                "offset-y": "",
+                                                                "min-width":
+                                                                  "290px"
+                                                              },
+                                                              scopedSlots: _vm._u(
+                                                                [
+                                                                  {
+                                                                    key:
+                                                                      "activator",
+                                                                    fn: function(
+                                                                      ref
+                                                                    ) {
+                                                                      var on =
+                                                                        ref.on
+                                                                      return [
+                                                                        _c(
+                                                                          "v-text-field",
+                                                                          _vm._g(
+                                                                            {
+                                                                              attrs: {
+                                                                                label:
+                                                                                  "Special Price End",
+                                                                                "prepend-icon":
+                                                                                  "mdi-calendar-month",
+                                                                                readonly:
+                                                                                  ""
+                                                                              },
+                                                                              model: {
+                                                                                value:
+                                                                                  _vm
+                                                                                    .editedItem
+                                                                                    .special_price_end,
+                                                                                callback: function(
+                                                                                  $$v
+                                                                                ) {
+                                                                                  _vm.$set(
+                                                                                    _vm.editedItem,
+                                                                                    "special_price_end",
+                                                                                    $$v
+                                                                                  )
+                                                                                },
+                                                                                expression:
+                                                                                  "editedItem.special_price_end"
+                                                                              }
+                                                                            },
+                                                                            on
+                                                                          )
+                                                                        )
+                                                                      ]
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              ),
+                                                              model: {
+                                                                value:
+                                                                  _vm.menu_special_price_end,
+                                                                callback: function(
+                                                                  $$v
+                                                                ) {
+                                                                  _vm.menu_special_price_end = $$v
+                                                                },
+                                                                expression:
+                                                                  "menu_special_price_end"
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(" "),
+                                                              _c(
+                                                                "v-date-picker",
+                                                                {
+                                                                  on: {
+                                                                    input: function(
+                                                                      $event
+                                                                    ) {
+                                                                      _vm.menu_special_price_end = false
+                                                                    }
+                                                                  },
+                                                                  model: {
+                                                                    value:
+                                                                      _vm
+                                                                        .editedItem
+                                                                        .special_price_end,
+                                                                    callback: function(
+                                                                      $$v
+                                                                    ) {
+                                                                      _vm.$set(
+                                                                        _vm.editedItem,
+                                                                        "special_price_end",
+                                                                        $$v
+                                                                      )
+                                                                    },
+                                                                    expression:
+                                                                      "editedItem.special_price_end"
+                                                                  }
+                                                                }
+                                                              )
+                                                            ],
+                                                            1
+                                                          )
+                                                        ],
+                                                        1
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-expansion-panel",
+                                            [
+                                              _c("v-expansion-panel-header", {
+                                                scopedSlots: _vm._u([
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var open = ref.open
+                                                      return [
+                                                        _c(
+                                                          "v-row",
+                                                          {
+                                                            attrs: {
+                                                              "no-gutters": ""
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                attrs: {
+                                                                  cols: "4"
+                                                                }
+                                                              },
+                                                              [
+                                                                _vm._v(
+                                                                  "Inventory"
+                                                                )
+                                                              ]
+                                                            ),
+                                                            _vm._v(" "),
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                staticClass:
+                                                                  "text--secondary",
+                                                                attrs: {
+                                                                  cols: "8"
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "v-fade-transition",
+                                                                  {
+                                                                    attrs: {
+                                                                      "leave-absolute":
+                                                                        ""
+                                                                    }
+                                                                  }
+                                                                )
+                                                              ],
+                                                              1
+                                                            )
+                                                          ],
+                                                          1
+                                                        )
+                                                      ]
+                                                    }
+                                                  }
+                                                ])
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-expansion-panel-content",
+                                                [
+                                                  _c(
+                                                    "v-row",
+                                                    {
+                                                      staticClass:
+                                                        "d-flex justify-space-around",
+                                                      attrs: {
+                                                        "no-gutters": ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-col",
+                                                        {
+                                                          attrs: {
+                                                            cols: "12",
+                                                            sm: "5",
+                                                            md: "5",
+                                                            lg: "5",
+                                                            xl: "5"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("v-text-field", {
+                                                            attrs: {
+                                                              label: "SKU"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .sku,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "sku",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.sku"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("v-checkbox", {
+                                                            attrs: {
+                                                              label:
+                                                                "Stock Availability"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .is_active,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "is_active",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.is_active"
+                                                            }
+                                                          })
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c("v-divider", {
+                                                        staticClass:
+                                                          "mx-4 hidden-xs-only",
+                                                        attrs: { vertical: "" }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-col",
+                                                        {
+                                                          attrs: {
+                                                            cols: "12",
+                                                            sm: "5",
+                                                            md: "5",
+                                                            lg: "5",
+                                                            xl: "5"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("v-checkbox", {
+                                                            attrs: {
+                                                              label:
+                                                                "Manage Inventory"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .manage_inventory,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "manage_inventory",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.manage_inventory"
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("v-text-field", {
+                                                            attrs: {
+                                                              label: "Quantity"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .quantity,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "quantity",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.quantity"
+                                                            }
+                                                          })
+                                                        ],
+                                                        1
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-expansion-panel",
+                                            [
+                                              _c("v-expansion-panel-header", {
+                                                scopedSlots: _vm._u([
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var open = ref.open
+                                                      return [
+                                                        _c(
+                                                          "v-row",
+                                                          {
+                                                            attrs: {
+                                                              "no-gutters": ""
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                attrs: {
+                                                                  cols: "4"
+                                                                }
+                                                              },
+                                                              [_vm._v("Images")]
+                                                            ),
+                                                            _vm._v(" "),
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                staticClass:
+                                                                  "text--secondary",
+                                                                attrs: {
+                                                                  cols: "8"
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "v-fade-transition",
+                                                                  {
+                                                                    attrs: {
+                                                                      "leave-absolute":
+                                                                        ""
+                                                                    }
+                                                                  }
+                                                                )
+                                                              ],
+                                                              1
+                                                            )
+                                                          ],
+                                                          1
+                                                        )
+                                                      ]
+                                                    }
+                                                  }
+                                                ])
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-expansion-panel-content",
+                                                [
+                                                  _c(
+                                                    "v-row",
+                                                    {
+                                                      staticClass:
+                                                        "d-flex justify-space-around",
+                                                      attrs: {
+                                                        "no-gutters": ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-col",
+                                                        {
+                                                          attrs: {
+                                                            cols: "12",
+                                                            sm: "5",
+                                                            md: "5",
+                                                            lg: "5",
+                                                            xl: "5"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("input", {
+                                                            attrs: {
+                                                              type: "file"
+                                                            },
+                                                            on: {
+                                                              change:
+                                                                _vm.uploadImage1
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("br"),
+                                                          _vm._v(" "),
+                                                          _c("span", [
+                                                            _vm._v(
+                                                              "Image 600X800"
+                                                            )
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c("v-divider", {
+                                                            staticClass:
+                                                              "my-4 hidden-xs-only"
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("input", {
+                                                            attrs: {
+                                                              type: "file"
+                                                            },
+                                                            on: {
+                                                              change:
+                                                                _vm.uploadImage2
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("br"),
+                                                          _vm._v(" "),
+                                                          _c("span", [
+                                                            _vm._v(
+                                                              "Image 600X800"
+                                                            )
+                                                          ])
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c("v-divider", {
+                                                        staticClass:
+                                                          "mx-4 hidden-xs-only",
+                                                        attrs: { vertical: "" }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-col",
+                                                        {
+                                                          attrs: {
+                                                            cols: "12",
+                                                            sm: "5",
+                                                            md: "5",
+                                                            lg: "5",
+                                                            xl: "5"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("input", {
+                                                            attrs: {
+                                                              type: "file"
+                                                            },
+                                                            on: {
+                                                              change:
+                                                                _vm.uploadImage3
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("br"),
+                                                          _vm._v(" "),
+                                                          _c("span", [
+                                                            _vm._v(
+                                                              "Image 600X800"
+                                                            )
+                                                          ]),
+                                                          _vm._v(" "),
+                                                          _c("v-divider", {
+                                                            staticClass:
+                                                              "my-4 hidden-xs-only"
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("input", {
+                                                            attrs: {
+                                                              type: "file"
+                                                            },
+                                                            on: {
+                                                              change:
+                                                                _vm.uploadImage4
+                                                            }
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c("br"),
+                                                          _vm._v(" "),
+                                                          _c("span", [
+                                                            _vm._v(
+                                                              "Image 600X800"
+                                                            )
+                                                          ])
+                                                        ],
+                                                        1
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-expansion-panel",
+                                            [
+                                              _c("v-expansion-panel-header", {
+                                                scopedSlots: _vm._u([
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var open = ref.open
+                                                      return [
+                                                        _c(
+                                                          "v-row",
+                                                          {
+                                                            attrs: {
+                                                              "no-gutters": ""
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                attrs: {
+                                                                  cols: "4"
+                                                                }
+                                                              },
+                                                              [
+                                                                _vm._v(
+                                                                  "Attributes"
+                                                                )
+                                                              ]
+                                                            ),
+                                                            _vm._v(" "),
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                staticClass:
+                                                                  "text--secondary",
+                                                                attrs: {
+                                                                  cols: "8"
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "v-fade-transition",
+                                                                  {
+                                                                    attrs: {
+                                                                      "leave-absolute":
+                                                                        ""
+                                                                    }
+                                                                  }
+                                                                )
+                                                              ],
+                                                              1
+                                                            )
+                                                          ],
+                                                          1
+                                                        )
+                                                      ]
+                                                    }
+                                                  }
+                                                ])
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-expansion-panel-content",
+                                                [
+                                                  _c(
+                                                    "v-row",
+                                                    {
+                                                      staticClass:
+                                                        "d-flex justify-space-around",
+                                                      attrs: {
+                                                        "no-gutters": ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-col",
+                                                        {
+                                                          attrs: { cols: "12" }
+                                                        },
+                                                        [
+                                                          _c("v-simple-table", {
+                                                            scopedSlots: _vm._u(
+                                                              [
+                                                                {
+                                                                  key:
+                                                                    "default",
+                                                                  fn: function() {
+                                                                    return [
+                                                                      _c(
+                                                                        "thead",
+                                                                        [
+                                                                          _c(
+                                                                            "tr",
+                                                                            [
+                                                                              _c(
+                                                                                "th"
+                                                                              ),
+                                                                              _vm._v(
+                                                                                " "
+                                                                              ),
+                                                                              _c(
+                                                                                "th",
+                                                                                [
+                                                                                  _vm._v(
+                                                                                    "Attribute"
+                                                                                  )
+                                                                                ]
+                                                                              ),
+                                                                              _vm._v(
+                                                                                " "
+                                                                              ),
+                                                                              _c(
+                                                                                "th",
+                                                                                {
+                                                                                  staticClass:
+                                                                                    "text-center"
+                                                                                },
+                                                                                [
+                                                                                  _vm._v(
+                                                                                    "XS"
+                                                                                  )
+                                                                                ]
+                                                                              ),
+                                                                              _vm._v(
+                                                                                " "
+                                                                              ),
+                                                                              _c(
+                                                                                "th",
+                                                                                {
+                                                                                  staticClass:
+                                                                                    "text-center"
+                                                                                },
+                                                                                [
+                                                                                  _vm._v(
+                                                                                    "S"
+                                                                                  )
+                                                                                ]
+                                                                              ),
+                                                                              _vm._v(
+                                                                                " "
+                                                                              ),
+                                                                              _c(
+                                                                                "th",
+                                                                                {
+                                                                                  staticClass:
+                                                                                    "text-center"
+                                                                                },
+                                                                                [
+                                                                                  _vm._v(
+                                                                                    "M"
+                                                                                  )
+                                                                                ]
+                                                                              ),
+                                                                              _vm._v(
+                                                                                " "
+                                                                              ),
+                                                                              _c(
+                                                                                "th",
+                                                                                {
+                                                                                  staticClass:
+                                                                                    "text-center"
+                                                                                },
+                                                                                [
+                                                                                  _vm._v(
+                                                                                    "L"
+                                                                                  )
+                                                                                ]
+                                                                              ),
+                                                                              _vm._v(
+                                                                                " "
+                                                                              ),
+                                                                              _c(
+                                                                                "th",
+                                                                                {
+                                                                                  staticClass:
+                                                                                    "text-center"
+                                                                                },
+                                                                                [
+                                                                                  _vm._v(
+                                                                                    "XL"
+                                                                                  )
+                                                                                ]
+                                                                              )
+                                                                            ]
+                                                                          )
+                                                                        ]
+                                                                      ),
+                                                                      _vm._v(
+                                                                        " "
+                                                                      ),
+                                                                      _c(
+                                                                        "tbody",
+                                                                        _vm._l(
+                                                                          _vm
+                                                                            .editedItem
+                                                                            .size_attribs,
+                                                                          function(
+                                                                            size_attrib,
+                                                                            k
+                                                                          ) {
+                                                                            return _c(
+                                                                              "tr",
+                                                                              {
+                                                                                key: k
+                                                                              },
+                                                                              [
+                                                                                _c(
+                                                                                  "td",
+                                                                                  {
+                                                                                    attrs: {
+                                                                                      scope:
+                                                                                        "row"
+                                                                                    }
+                                                                                  },
+                                                                                  [
+                                                                                    _c(
+                                                                                      "v-btn",
+                                                                                      {
+                                                                                        attrs: {
+                                                                                          icon:
+                                                                                            ""
+                                                                                        },
+                                                                                        on: {
+                                                                                          click: function(
+                                                                                            $event
+                                                                                          ) {
+                                                                                            return _vm.deleteRow(
+                                                                                              k,
+                                                                                              size_attrib
+                                                                                            )
+                                                                                          }
+                                                                                        }
+                                                                                      },
+                                                                                      [
+                                                                                        _c(
+                                                                                          "v-icon",
+                                                                                          [
+                                                                                            _vm._v(
+                                                                                              "mdi-delete"
+                                                                                            )
+                                                                                          ]
+                                                                                        )
+                                                                                      ],
+                                                                                      1
+                                                                                    )
+                                                                                  ],
+                                                                                  1
+                                                                                ),
+                                                                                _vm._v(
+                                                                                  " "
+                                                                                ),
+                                                                                _c(
+                                                                                  "td",
+                                                                                  [
+                                                                                    _c(
+                                                                                      "v-select",
+                                                                                      {
+                                                                                        attrs: {
+                                                                                          items:
+                                                                                            _vm.subattribs,
+                                                                                          "item-text":
+                                                                                            "name",
+                                                                                          "item-value":
+                                                                                            "id",
+                                                                                          label:
+                                                                                            "Sub"
+                                                                                        },
+                                                                                        model: {
+                                                                                          value:
+                                                                                            size_attrib.attribute,
+                                                                                          callback: function(
+                                                                                            $$v
+                                                                                          ) {
+                                                                                            _vm.$set(
+                                                                                              size_attrib,
+                                                                                              "attribute",
+                                                                                              $$v
+                                                                                            )
+                                                                                          },
+                                                                                          expression:
+                                                                                            "size_attrib.attribute"
+                                                                                        }
+                                                                                      }
+                                                                                    )
+                                                                                  ],
+                                                                                  1
+                                                                                ),
+                                                                                _vm._v(
+                                                                                  " "
+                                                                                ),
+                                                                                _c(
+                                                                                  "td",
+                                                                                  [
+                                                                                    _c(
+                                                                                      "v-text-field",
+                                                                                      {
+                                                                                        attrs: {
+                                                                                          type:
+                                                                                            "number",
+                                                                                          min:
+                                                                                            "0",
+                                                                                          step:
+                                                                                            ".01"
+                                                                                        },
+                                                                                        model: {
+                                                                                          value:
+                                                                                            size_attrib.xs,
+                                                                                          callback: function(
+                                                                                            $$v
+                                                                                          ) {
+                                                                                            _vm.$set(
+                                                                                              size_attrib,
+                                                                                              "xs",
+                                                                                              $$v
+                                                                                            )
+                                                                                          },
+                                                                                          expression:
+                                                                                            "size_attrib.xs"
+                                                                                        }
+                                                                                      }
+                                                                                    )
+                                                                                  ],
+                                                                                  1
+                                                                                ),
+                                                                                _vm._v(
+                                                                                  " "
+                                                                                ),
+                                                                                _c(
+                                                                                  "td",
+                                                                                  [
+                                                                                    _c(
+                                                                                      "v-text-field",
+                                                                                      {
+                                                                                        attrs: {
+                                                                                          type:
+                                                                                            "number",
+                                                                                          min:
+                                                                                            "0",
+                                                                                          step:
+                                                                                            ".01"
+                                                                                        },
+                                                                                        model: {
+                                                                                          value:
+                                                                                            size_attrib.s,
+                                                                                          callback: function(
+                                                                                            $$v
+                                                                                          ) {
+                                                                                            _vm.$set(
+                                                                                              size_attrib,
+                                                                                              "s",
+                                                                                              $$v
+                                                                                            )
+                                                                                          },
+                                                                                          expression:
+                                                                                            "size_attrib.s"
+                                                                                        }
+                                                                                      }
+                                                                                    )
+                                                                                  ],
+                                                                                  1
+                                                                                ),
+                                                                                _vm._v(
+                                                                                  " "
+                                                                                ),
+                                                                                _c(
+                                                                                  "td",
+                                                                                  [
+                                                                                    _c(
+                                                                                      "v-text-field",
+                                                                                      {
+                                                                                        attrs: {
+                                                                                          type:
+                                                                                            "number",
+                                                                                          min:
+                                                                                            "0",
+                                                                                          step:
+                                                                                            ".01"
+                                                                                        },
+                                                                                        model: {
+                                                                                          value:
+                                                                                            size_attrib.m,
+                                                                                          callback: function(
+                                                                                            $$v
+                                                                                          ) {
+                                                                                            _vm.$set(
+                                                                                              size_attrib,
+                                                                                              "m",
+                                                                                              $$v
+                                                                                            )
+                                                                                          },
+                                                                                          expression:
+                                                                                            "size_attrib.m"
+                                                                                        }
+                                                                                      }
+                                                                                    )
+                                                                                  ],
+                                                                                  1
+                                                                                ),
+                                                                                _vm._v(
+                                                                                  " "
+                                                                                ),
+                                                                                _c(
+                                                                                  "td",
+                                                                                  [
+                                                                                    _c(
+                                                                                      "v-text-field",
+                                                                                      {
+                                                                                        attrs: {
+                                                                                          type:
+                                                                                            "number",
+                                                                                          min:
+                                                                                            "0",
+                                                                                          step:
+                                                                                            ".01"
+                                                                                        },
+                                                                                        model: {
+                                                                                          value:
+                                                                                            size_attrib.l,
+                                                                                          callback: function(
+                                                                                            $$v
+                                                                                          ) {
+                                                                                            _vm.$set(
+                                                                                              size_attrib,
+                                                                                              "l",
+                                                                                              $$v
+                                                                                            )
+                                                                                          },
+                                                                                          expression:
+                                                                                            "size_attrib.l"
+                                                                                        }
+                                                                                      }
+                                                                                    )
+                                                                                  ],
+                                                                                  1
+                                                                                ),
+                                                                                _vm._v(
+                                                                                  " "
+                                                                                ),
+                                                                                _c(
+                                                                                  "td",
+                                                                                  [
+                                                                                    _c(
+                                                                                      "v-text-field",
+                                                                                      {
+                                                                                        attrs: {
+                                                                                          type:
+                                                                                            "number",
+                                                                                          min:
+                                                                                            "0",
+                                                                                          step:
+                                                                                            ".01"
+                                                                                        },
+                                                                                        model: {
+                                                                                          value:
+                                                                                            size_attrib.xl,
+                                                                                          callback: function(
+                                                                                            $$v
+                                                                                          ) {
+                                                                                            _vm.$set(
+                                                                                              size_attrib,
+                                                                                              "xl",
+                                                                                              $$v
+                                                                                            )
+                                                                                          },
+                                                                                          expression:
+                                                                                            "size_attrib.xl"
+                                                                                        }
+                                                                                      }
+                                                                                    )
+                                                                                  ],
+                                                                                  1
+                                                                                )
+                                                                              ]
+                                                                            )
+                                                                          }
+                                                                        ),
+                                                                        0
+                                                                      )
+                                                                    ]
+                                                                  },
+                                                                  proxy: true
+                                                                }
+                                                              ]
+                                                            )
+                                                          }),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "v-btn",
+                                                            {
+                                                              staticClass:
+                                                                "mt-2",
+                                                              attrs: {
+                                                                color: "pink"
+                                                              },
+                                                              on: {
+                                                                click:
+                                                                  _vm.addNewRow
+                                                              }
+                                                            },
+                                                            [_vm._v("Add Row")]
+                                                          )
+                                                        ],
+                                                        1
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-expansion-panel",
+                                            [
+                                              _c("v-expansion-panel-header", {
+                                                scopedSlots: _vm._u([
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var open = ref.open
+                                                      return [
+                                                        _c(
+                                                          "v-row",
+                                                          {
+                                                            attrs: {
+                                                              "no-gutters": ""
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                attrs: {
+                                                                  cols: "4"
+                                                                }
+                                                              },
+                                                              [
+                                                                _vm._v(
+                                                                  "Additionals"
+                                                                )
+                                                              ]
+                                                            ),
+                                                            _vm._v(" "),
+                                                            _c(
+                                                              "v-col",
+                                                              {
+                                                                staticClass:
+                                                                  "text--secondary",
+                                                                attrs: {
+                                                                  cols: "8"
+                                                                }
+                                                              },
+                                                              [
+                                                                _c(
+                                                                  "v-fade-transition",
+                                                                  {
+                                                                    attrs: {
+                                                                      "leave-absolute":
+                                                                        ""
+                                                                    }
+                                                                  }
+                                                                )
+                                                              ],
+                                                              1
+                                                            )
+                                                          ],
+                                                          1
+                                                        )
+                                                      ]
+                                                    }
+                                                  }
+                                                ])
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-expansion-panel-content",
+                                                [
+                                                  _c(
+                                                    "v-row",
+                                                    {
+                                                      staticClass:
+                                                        "d-flex justify-space-around",
+                                                      attrs: {
+                                                        "no-gutters": ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-col",
+                                                        {
+                                                          attrs: {
+                                                            cols: "12",
+                                                            sm: "5",
+                                                            md: "5",
+                                                            lg: "5",
+                                                            xl: "5"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("v-textarea", {
+                                                            attrs: {
+                                                              name: "input-7-1",
+                                                              label:
+                                                                "Short Description",
+                                                              hint: "Hint text"
+                                                            },
+                                                            model: {
+                                                              value:
+                                                                _vm.editedItem
+                                                                  .shortDescription,
+                                                              callback: function(
+                                                                $$v
+                                                              ) {
+                                                                _vm.$set(
+                                                                  _vm.editedItem,
+                                                                  "shortDescription",
+                                                                  $$v
+                                                                )
+                                                              },
+                                                              expression:
+                                                                "editedItem.shortDescription"
+                                                            }
+                                                          })
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c("v-divider", {
+                                                        staticClass:
+                                                          "mx-4 hidden-xs-only",
+                                                        attrs: { vertical: "" }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-col",
+                                                        {
+                                                          attrs: {
+                                                            cols: "12",
+                                                            sm: "5",
+                                                            md: "5",
+                                                            lg: "5",
+                                                            xl: "5"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "v-menu",
+                                                            {
+                                                              attrs: {
+                                                                "close-on-content-click": false,
+                                                                "nudge-right": 40,
+                                                                transition:
+                                                                  "scale-transition",
+                                                                "offset-y": "",
+                                                                "min-width":
+                                                                  "290px"
+                                                              },
+                                                              scopedSlots: _vm._u(
+                                                                [
+                                                                  {
+                                                                    key:
+                                                                      "activator",
+                                                                    fn: function(
+                                                                      ref
+                                                                    ) {
+                                                                      var on =
+                                                                        ref.on
+                                                                      return [
+                                                                        _c(
+                                                                          "v-text-field",
+                                                                          _vm._g(
+                                                                            {
+                                                                              attrs: {
+                                                                                label:
+                                                                                  "Product New From",
+                                                                                "prepend-icon":
+                                                                                  "mdi-calendar-month",
+                                                                                readonly:
+                                                                                  ""
+                                                                              },
+                                                                              model: {
+                                                                                value:
+                                                                                  _vm
+                                                                                    .editedItem
+                                                                                    .new_from,
+                                                                                callback: function(
+                                                                                  $$v
+                                                                                ) {
+                                                                                  _vm.$set(
+                                                                                    _vm.editedItem,
+                                                                                    "new_from",
+                                                                                    $$v
+                                                                                  )
+                                                                                },
+                                                                                expression:
+                                                                                  "editedItem.new_from"
+                                                                              }
+                                                                            },
+                                                                            on
+                                                                          )
+                                                                        )
+                                                                      ]
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              ),
+                                                              model: {
+                                                                value:
+                                                                  _vm.menu_new_from,
+                                                                callback: function(
+                                                                  $$v
+                                                                ) {
+                                                                  _vm.menu_new_from = $$v
+                                                                },
+                                                                expression:
+                                                                  "menu_new_from"
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(" "),
+                                                              _c(
+                                                                "v-date-picker",
+                                                                {
+                                                                  on: {
+                                                                    input: function(
+                                                                      $event
+                                                                    ) {
+                                                                      _vm.menu_new_from = false
+                                                                    }
+                                                                  },
+                                                                  model: {
+                                                                    value:
+                                                                      _vm
+                                                                        .editedItem
+                                                                        .new_from,
+                                                                    callback: function(
+                                                                      $$v
+                                                                    ) {
+                                                                      _vm.$set(
+                                                                        _vm.editedItem,
+                                                                        "new_from",
+                                                                        $$v
+                                                                      )
+                                                                    },
+                                                                    expression:
+                                                                      "editedItem.new_from"
+                                                                  }
+                                                                }
+                                                              )
+                                                            ],
+                                                            1
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "v-menu",
+                                                            {
+                                                              attrs: {
+                                                                "close-on-content-click": false,
+                                                                "nudge-right": 40,
+                                                                transition:
+                                                                  "scale-transition",
+                                                                "offset-y": "",
+                                                                "min-width":
+                                                                  "290px"
+                                                              },
+                                                              scopedSlots: _vm._u(
+                                                                [
+                                                                  {
+                                                                    key:
+                                                                      "activator",
+                                                                    fn: function(
+                                                                      ref
+                                                                    ) {
+                                                                      var on =
+                                                                        ref.on
+                                                                      return [
+                                                                        _c(
+                                                                          "v-text-field",
+                                                                          _vm._g(
+                                                                            {
+                                                                              attrs: {
+                                                                                label:
+                                                                                  "Product New To",
+                                                                                "prepend-icon":
+                                                                                  "mdi-calendar-month",
+                                                                                readonly:
+                                                                                  ""
+                                                                              },
+                                                                              model: {
+                                                                                value:
+                                                                                  _vm
+                                                                                    .editedItem
+                                                                                    .new_to,
+                                                                                callback: function(
+                                                                                  $$v
+                                                                                ) {
+                                                                                  _vm.$set(
+                                                                                    _vm.editedItem,
+                                                                                    "new_to",
+                                                                                    $$v
+                                                                                  )
+                                                                                },
+                                                                                expression:
+                                                                                  "editedItem.new_to"
+                                                                              }
+                                                                            },
+                                                                            on
+                                                                          )
+                                                                        )
+                                                                      ]
+                                                                    }
+                                                                  }
+                                                                ]
+                                                              ),
+                                                              model: {
+                                                                value:
+                                                                  _vm.menu_new_to,
+                                                                callback: function(
+                                                                  $$v
+                                                                ) {
+                                                                  _vm.menu_new_to = $$v
+                                                                },
+                                                                expression:
+                                                                  "menu_new_to"
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(" "),
+                                                              _c(
+                                                                "v-date-picker",
+                                                                {
+                                                                  on: {
+                                                                    input: function(
+                                                                      $event
+                                                                    ) {
+                                                                      _vm.menu_new_to = false
+                                                                    }
+                                                                  },
+                                                                  model: {
+                                                                    value:
+                                                                      _vm
+                                                                        .editedItem
+                                                                        .new_to,
+                                                                    callback: function(
+                                                                      $$v
+                                                                    ) {
+                                                                      _vm.$set(
+                                                                        _vm.editedItem,
+                                                                        "new_to",
+                                                                        $$v
+                                                                      )
+                                                                    },
+                                                                    expression:
+                                                                      "editedItem.new_to"
+                                                                  }
+                                                                }
+                                                              )
+                                                            ],
+                                                            1
+                                                          )
+                                                        ],
+                                                        1
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-actions",
+                                [
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: {
+                                        color: "blue darken-1",
+                                        text: ""
+                                      },
+                                      on: { click: _vm.close }
+                                    },
+                                    [_vm._v("Cancel")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: {
+                                        color: "blue darken-1",
+                                        type: "submit",
+                                        disabled: !_vm.valid
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.save($event)
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Save")]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-text-field", {
+                staticClass: "mx-4",
+                attrs: {
+                  "append-icon": "mdi-search",
+                  label: "Search",
+                  "single-line": "",
+                  "hide-details": ""
+                },
+                on: { input: _vm.searchIt }
+              })
+            ]
+          },
+          proxy: true
+        },
+        {
+          key: "item.action",
+          fn: function(ref) {
+            var item = ref.item
+            return [
+              _c(
+                "v-icon",
+                {
+                  staticClass: "mr-2",
+                  attrs: { small: "" },
+                  on: {
+                    click: function($event) {
+                      return _vm.editItem(item)
+                    }
+                  }
+                },
+                [_vm._v("mdi-pencil")]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-icon",
+                {
+                  attrs: { small: "" },
+                  on: {
+                    click: function($event) {
+                      return _vm.deleteItem(item)
+                    }
+                  }
+                },
+                [_vm._v("mdi-delete")]
+              )
+            ]
+          }
+        },
+        {
+          key: "no-data",
+          fn: function() {
+            return [
+              _c(
+                "v-btn",
+                { attrs: { color: "primary" }, on: { click: _vm.initialize } },
+                [_vm._v("Reset")]
+              )
+            ]
+          },
+          proxy: true
+        },
+        {
+          key: "item.photo",
+          fn: function(ref) {
+            var item = ref.item
+            return [
+              _c(
+                "v-edit-dialog",
+                {
+                  scopedSlots: _vm._u(
+                    [
+                      {
+                        key: "input",
+                        fn: function() {
+                          return [
+                            _c("v-file-input", {
+                              attrs: {
+                                label: "Select Photo",
+                                placeholder: "Upload Avatar",
+                                accept:
+                                  "image/jpg, image/png, image/bmp, image/jpeg"
+                              },
+                              on: {
+                                change: function($event) {
+                                  return _vm.uploadPhoto(item)
+                                }
+                              },
+                              model: {
+                                value: _vm.editedItem.photo,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.editedItem, "photo", $$v)
+                                },
+                                expression: "editedItem.photo"
+                              }
+                            })
+                          ]
+                        },
+                        proxy: true
+                      }
+                    ],
+                    null,
+                    true
+                  )
+                },
+                [
+                  _c("v-avatar", { attrs: { size: "36px" } }, [
+                    _c("img", { attrs: { src: item.photo, alt: "Avatar" } })
+                  ])
+                ],
+                1
+              )
+            ]
+          }
+        },
+        {
+          key: "item.role",
+          fn: function(ref) {
+            var item = ref.item
+            return [
+              _c(
+                "v-edit-dialog",
+                {
+                  attrs: {
+                    large: "",
+                    block: "",
+                    persistent: "",
+                    "return-value": item.role
+                  },
+                  on: {
+                    "update:returnValue": function($event) {
+                      return _vm.$set(item, "role", $event)
+                    },
+                    "update:return-value": function($event) {
+                      return _vm.$set(item, "role", $event)
+                    },
+                    save: function($event) {
+                      return _vm.updateRole(item)
+                    }
+                  },
+                  scopedSlots: _vm._u(
+                    [
+                      {
+                        key: "input",
+                        fn: function() {
+                          return [
+                            _c("v-select", {
+                              attrs: {
+                                items: _vm.roles,
+                                label: "Select Role",
+                                rules: [_vm.rules.required]
+                              },
+                              model: {
+                                value: item.role,
+                                callback: function($$v) {
+                                  _vm.$set(item, "role", $$v)
+                                },
+                                expression: "item.role"
+                              }
+                            })
+                          ]
+                        },
+                        proxy: true
+                      }
+                    ],
+                    null,
+                    true
+                  )
+                },
+                [_vm._v("\n      " + _vm._s(item.role) + "\n      ")]
+              )
+            ]
+          }
+        }
+      ])
+    },
+    [
+      _vm._v(" "),
+      _vm._v(" "),
+      _vm._v(" "),
+      _vm._v(" "),
+      _vm._v(" "),
+      _vm._v(" "),
+      _c(
+        "v-snackbar",
+        {
+          model: {
+            value: _vm.snackbar,
+            callback: function($$v) {
+              _vm.snackbar = $$v
+            },
+            expression: "snackbar"
+          }
+        },
+        [
+          _vm._v("\n    " + _vm._s(_vm.text) + "\n    "),
+          _c(
+            "v-btn",
+            {
+              attrs: { color: "white", text: "" },
+              on: {
+                click: function($event) {
+                  _vm.snackbar = false
+                }
+              }
+            },
+            [_vm._v("Close")]
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/admin/RolesComponent.vue?vue&type=template&id=50be971e&":
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/admin/RolesComponent.vue?vue&type=template&id=50be971e& ***!
@@ -44408,10 +48177,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c&":
-/*!***************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c& ***!
-  \***************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -44429,38 +48198,1590 @@ var render = function() {
       _c(
         "v-container",
         [
-          _c("v-select", {
-            attrs: {
-              items: _vm.attribs,
-              "item-text": "name",
-              "item-value": "id",
-              label: "Arrtibute Set ID"
-            },
-            on: { change: _vm.locadSubAttributes },
-            model: {
-              value: _vm.attrib,
-              callback: function($$v) {
-                _vm.attrib = $$v
-              },
-              expression: "attrib"
-            }
-          }),
+          _c("br"),
           _vm._v(" "),
-          _c("v-select", {
-            attrs: {
-              items: _vm.subattribs,
-              "item-text": "name",
-              "item-value": "id",
-              label: "Sub"
-            },
-            model: {
-              value: _vm.subattrib,
-              callback: function($$v) {
-                _vm.subattrib = $$v
-              },
-              expression: "subattrib"
-            }
-          })
+          _c("br"),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c(
+            "v-expansion-panels",
+            [
+              _c(
+                "v-expansion-panel",
+                [
+                  _c("v-expansion-panel-header", {
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(ref) {
+                          var open = ref.open
+                          return [
+                            _c(
+                              "v-row",
+                              { attrs: { "no-gutters": "" } },
+                              [
+                                _c("v-col", { attrs: { cols: "4" } }, [
+                                  _vm._v("General")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "v-col",
+                                  {
+                                    staticClass: "text--secondary",
+                                    attrs: { cols: "8" }
+                                  },
+                                  [
+                                    _c("v-fade-transition", {
+                                      attrs: { "leave-absolute": "" }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        }
+                      }
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-expansion-panel-content",
+                    [
+                      _c(
+                        "v-row",
+                        {
+                          staticClass: "d-flex justify-space-around",
+                          attrs: { "no-gutters": "" }
+                        },
+                        [
+                          _c(
+                            "v-col",
+                            {
+                              attrs: {
+                                cols: "12",
+                                sm: "5",
+                                md: "5",
+                                lg: "5",
+                                xl: "5"
+                              }
+                            },
+                            [
+                              _c("v-text-field", { attrs: { label: "Name" } }),
+                              _vm._v(" "),
+                              _c("v-select", {
+                                attrs: {
+                                  items: _vm.locations,
+                                  label: "Category"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("v-checkbox", { attrs: { label: "isActive" } })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider", {
+                            staticClass: "mx-4 hidden-xs-only",
+                            attrs: { vertical: "" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            {
+                              attrs: {
+                                cols: "12",
+                                sm: "5",
+                                md: "5",
+                                lg: "5",
+                                xl: "5"
+                              }
+                            },
+                            [
+                              _c("vue-simplemde", {
+                                ref: "markdownEditor",
+                                model: {
+                                  value: _vm.locations,
+                                  callback: function($$v) {
+                                    _vm.locations = $$v
+                                  },
+                                  expression: "locations"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-expansion-panel",
+                [
+                  _c("v-expansion-panel-header", {
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(ref) {
+                          var open = ref.open
+                          return [
+                            _c(
+                              "v-row",
+                              { attrs: { "no-gutters": "" } },
+                              [
+                                _c("v-col", { attrs: { cols: "4" } }, [
+                                  _vm._v("Price")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "v-col",
+                                  {
+                                    staticClass: "text--secondary",
+                                    attrs: { cols: "8" }
+                                  },
+                                  [
+                                    _c("v-fade-transition", {
+                                      attrs: { "leave-absolute": "" }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        }
+                      }
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-expansion-panel-content",
+                    [
+                      _c(
+                        "v-row",
+                        {
+                          staticClass: "d-flex justify-space-around",
+                          attrs: { "no-gutters": "" }
+                        },
+                        [
+                          _c(
+                            "v-col",
+                            {
+                              attrs: {
+                                cols: "12",
+                                sm: "5",
+                                md: "5",
+                                lg: "5",
+                                xl: "5"
+                              }
+                            },
+                            [
+                              _c("v-text-field", {
+                                attrs: { label: "Price PKR" }
+                              }),
+                              _vm._v(" "),
+                              _c("v-text-field", {
+                                attrs: { label: "Price USD" }
+                              }),
+                              _vm._v(" "),
+                              _c("v-text-field", {
+                                attrs: { label: "Price AUD" }
+                              }),
+                              _vm._v(" "),
+                              _c("v-text-field", {
+                                attrs: { label: "Price EUR" }
+                              }),
+                              _vm._v(" "),
+                              _c("v-text-field", {
+                                attrs: { label: "Price GBP" }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider", {
+                            staticClass: "mx-4 hidden-xs-only",
+                            attrs: { vertical: "" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            {
+                              attrs: {
+                                cols: "12",
+                                sm: "5",
+                                md: "5",
+                                lg: "5",
+                                xl: "5"
+                              }
+                            },
+                            [
+                              _c("v-text-field", {
+                                attrs: { label: "Special Price % OFF" }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "v-menu",
+                                {
+                                  attrs: {
+                                    "close-on-content-click": false,
+                                    "nudge-right": 40,
+                                    transition: "scale-transition",
+                                    "offset-y": "",
+                                    "min-width": "290px"
+                                  },
+                                  scopedSlots: _vm._u([
+                                    {
+                                      key: "activator",
+                                      fn: function(ref) {
+                                        var on = ref.on
+                                        return [
+                                          _c(
+                                            "v-text-field",
+                                            _vm._g(
+                                              {
+                                                attrs: {
+                                                  label: "Special Price Start",
+                                                  "prepend-icon":
+                                                    "mdi-calendar-month",
+                                                  readonly: ""
+                                                },
+                                                model: {
+                                                  value: _vm.date,
+                                                  callback: function($$v) {
+                                                    _vm.date = $$v
+                                                  },
+                                                  expression: "date"
+                                                }
+                                              },
+                                              on
+                                            )
+                                          )
+                                        ]
+                                      }
+                                    }
+                                  ]),
+                                  model: {
+                                    value: _vm.menu2,
+                                    callback: function($$v) {
+                                      _vm.menu2 = $$v
+                                    },
+                                    expression: "menu2"
+                                  }
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c("v-date-picker", {
+                                    on: {
+                                      input: function($event) {
+                                        _vm.menu2 = false
+                                      }
+                                    },
+                                    model: {
+                                      value: _vm.date,
+                                      callback: function($$v) {
+                                        _vm.date = $$v
+                                      },
+                                      expression: "date"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-menu",
+                                {
+                                  attrs: {
+                                    "close-on-content-click": false,
+                                    "nudge-right": 40,
+                                    transition: "scale-transition",
+                                    "offset-y": "",
+                                    "min-width": "290px"
+                                  },
+                                  scopedSlots: _vm._u([
+                                    {
+                                      key: "activator",
+                                      fn: function(ref) {
+                                        var on = ref.on
+                                        return [
+                                          _c(
+                                            "v-text-field",
+                                            _vm._g(
+                                              {
+                                                attrs: {
+                                                  label: "Special Price End",
+                                                  "prepend-icon":
+                                                    "mdi-calendar-month",
+                                                  readonly: ""
+                                                },
+                                                model: {
+                                                  value: _vm.date2,
+                                                  callback: function($$v) {
+                                                    _vm.date2 = $$v
+                                                  },
+                                                  expression: "date2"
+                                                }
+                                              },
+                                              on
+                                            )
+                                          )
+                                        ]
+                                      }
+                                    }
+                                  ]),
+                                  model: {
+                                    value: _vm.menu3,
+                                    callback: function($$v) {
+                                      _vm.menu3 = $$v
+                                    },
+                                    expression: "menu3"
+                                  }
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c("v-date-picker", {
+                                    on: {
+                                      input: function($event) {
+                                        _vm.menu3 = false
+                                      }
+                                    },
+                                    model: {
+                                      value: _vm.date2,
+                                      callback: function($$v) {
+                                        _vm.date2 = $$v
+                                      },
+                                      expression: "date2"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-expansion-panel",
+                [
+                  _c("v-expansion-panel-header", {
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(ref) {
+                          var open = ref.open
+                          return [
+                            _c(
+                              "v-row",
+                              { attrs: { "no-gutters": "" } },
+                              [
+                                _c("v-col", { attrs: { cols: "4" } }, [
+                                  _vm._v("Inventory")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "v-col",
+                                  {
+                                    staticClass: "text--secondary",
+                                    attrs: { cols: "8" }
+                                  },
+                                  [
+                                    _c("v-fade-transition", {
+                                      attrs: { "leave-absolute": "" }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        }
+                      }
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-expansion-panel-content",
+                    [
+                      _c(
+                        "v-row",
+                        {
+                          staticClass: "d-flex justify-space-around",
+                          attrs: { "no-gutters": "" }
+                        },
+                        [
+                          _c(
+                            "v-col",
+                            {
+                              attrs: {
+                                cols: "12",
+                                sm: "5",
+                                md: "5",
+                                lg: "5",
+                                xl: "5"
+                              }
+                            },
+                            [
+                              _c("v-text-field", { attrs: { label: "SKU" } }),
+                              _vm._v(" "),
+                              _c("v-checkbox", {
+                                attrs: { label: "Stock Availability" }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider", {
+                            staticClass: "mx-4 hidden-xs-only",
+                            attrs: { vertical: "" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            {
+                              attrs: {
+                                cols: "12",
+                                sm: "5",
+                                md: "5",
+                                lg: "5",
+                                xl: "5"
+                              }
+                            },
+                            [
+                              _c("v-checkbox", {
+                                attrs: { label: "Manage Inventory" }
+                              }),
+                              _vm._v(" "),
+                              _c("v-text-field", {
+                                attrs: { label: "Quantity" }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-expansion-panel",
+                [
+                  _c("v-expansion-panel-header", {
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(ref) {
+                          var open = ref.open
+                          return [
+                            _c(
+                              "v-row",
+                              { attrs: { "no-gutters": "" } },
+                              [
+                                _c("v-col", { attrs: { cols: "4" } }, [
+                                  _vm._v("Images")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "v-col",
+                                  {
+                                    staticClass: "text--secondary",
+                                    attrs: { cols: "8" }
+                                  },
+                                  [
+                                    _c("v-fade-transition", {
+                                      attrs: { "leave-absolute": "" }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        }
+                      }
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-expansion-panel-content",
+                    [
+                      _c(
+                        "v-row",
+                        {
+                          staticClass: "d-flex justify-space-around",
+                          attrs: { "no-gutters": "" }
+                        },
+                        [
+                          _c(
+                            "v-col",
+                            {
+                              attrs: {
+                                cols: "12",
+                                sm: "5",
+                                md: "5",
+                                lg: "5",
+                                xl: "5"
+                              }
+                            },
+                            [_vm._v("Images")]
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider", {
+                            staticClass: "mx-4 hidden-xs-only",
+                            attrs: { vertical: "" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            {
+                              attrs: {
+                                cols: "12",
+                                sm: "5",
+                                md: "5",
+                                lg: "5",
+                                xl: "5"
+                              }
+                            },
+                            [_vm._v("Images2")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-expansion-panel",
+                [
+                  _c("v-expansion-panel-header", {
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(ref) {
+                          var open = ref.open
+                          return [
+                            _c(
+                              "v-row",
+                              { attrs: { "no-gutters": "" } },
+                              [
+                                _c("v-col", { attrs: { cols: "4" } }, [
+                                  _vm._v("Attributes")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "v-col",
+                                  {
+                                    staticClass: "text--secondary",
+                                    attrs: { cols: "8" }
+                                  },
+                                  [
+                                    _c("v-fade-transition", {
+                                      attrs: { "leave-absolute": "" }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        }
+                      }
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-expansion-panel-content",
+                    [
+                      _c(
+                        "v-row",
+                        {
+                          staticClass: "d-flex justify-space-around",
+                          attrs: { "no-gutters": "" }
+                        },
+                        [
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "12" } },
+                            [
+                              _c("v-simple-table", {
+                                scopedSlots: _vm._u([
+                                  {
+                                    key: "default",
+                                    fn: function() {
+                                      return [
+                                        _c("thead", [
+                                          _c("tr", [
+                                            _c("th"),
+                                            _vm._v(" "),
+                                            _c("th", [_vm._v("Attribute")]),
+                                            _vm._v(" "),
+                                            _c(
+                                              "th",
+                                              { staticClass: "text-center" },
+                                              [_vm._v("XS")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "th",
+                                              { staticClass: "text-center" },
+                                              [_vm._v("S")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "th",
+                                              { staticClass: "text-center" },
+                                              [_vm._v("M")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "th",
+                                              { staticClass: "text-center" },
+                                              [_vm._v("L")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "th",
+                                              { staticClass: "text-center" },
+                                              [_vm._v("XL")]
+                                            )
+                                          ])
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "tbody",
+                                          _vm._l(_vm.size_attribs, function(
+                                            size_attrib,
+                                            k
+                                          ) {
+                                            return _c("tr", { key: k }, [
+                                              _c(
+                                                "td",
+                                                { attrs: { scope: "row" } },
+                                                [
+                                                  _c(
+                                                    "v-btn",
+                                                    {
+                                                      attrs: { icon: "" },
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          return _vm.deleteRow(
+                                                            k,
+                                                            size_attrib
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("v-icon", [
+                                                        _vm._v("mdi-delete")
+                                                      ])
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "td",
+                                                [
+                                                  _c("v-select", {
+                                                    attrs: {
+                                                      items: _vm.subattribs,
+                                                      "item-text": "name",
+                                                      "item-value": "id",
+                                                      label: "Sub"
+                                                    },
+                                                    model: {
+                                                      value:
+                                                        size_attrib.attribute,
+                                                      callback: function($$v) {
+                                                        _vm.$set(
+                                                          size_attrib,
+                                                          "attribute",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "size_attrib.attribute"
+                                                    }
+                                                  })
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "td",
+                                                [
+                                                  _c("v-text-field", {
+                                                    attrs: {
+                                                      type: "number",
+                                                      min: "0",
+                                                      step: ".01"
+                                                    },
+                                                    model: {
+                                                      value: size_attrib.xs,
+                                                      callback: function($$v) {
+                                                        _vm.$set(
+                                                          size_attrib,
+                                                          "xs",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "size_attrib.xs"
+                                                    }
+                                                  })
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "td",
+                                                [
+                                                  _c("v-text-field", {
+                                                    attrs: {
+                                                      type: "number",
+                                                      min: "0",
+                                                      step: ".01"
+                                                    },
+                                                    model: {
+                                                      value: size_attrib.s,
+                                                      callback: function($$v) {
+                                                        _vm.$set(
+                                                          size_attrib,
+                                                          "s",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "size_attrib.s"
+                                                    }
+                                                  })
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "td",
+                                                [
+                                                  _c("v-text-field", {
+                                                    attrs: {
+                                                      type: "number",
+                                                      min: "0",
+                                                      step: ".01"
+                                                    },
+                                                    model: {
+                                                      value: size_attrib.m,
+                                                      callback: function($$v) {
+                                                        _vm.$set(
+                                                          size_attrib,
+                                                          "m",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "size_attrib.m"
+                                                    }
+                                                  })
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "td",
+                                                [
+                                                  _c("v-text-field", {
+                                                    attrs: {
+                                                      type: "number",
+                                                      min: "0",
+                                                      step: ".01"
+                                                    },
+                                                    model: {
+                                                      value: size_attrib.l,
+                                                      callback: function($$v) {
+                                                        _vm.$set(
+                                                          size_attrib,
+                                                          "l",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "size_attrib.l"
+                                                    }
+                                                  })
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "td",
+                                                [
+                                                  _c("v-text-field", {
+                                                    attrs: {
+                                                      type: "number",
+                                                      min: "0",
+                                                      step: ".01"
+                                                    },
+                                                    model: {
+                                                      value: size_attrib.xl,
+                                                      callback: function($$v) {
+                                                        _vm.$set(
+                                                          size_attrib,
+                                                          "xl",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "size_attrib.xl"
+                                                    }
+                                                  })
+                                                ],
+                                                1
+                                              )
+                                            ])
+                                          }),
+                                          0
+                                        )
+                                      ]
+                                    },
+                                    proxy: true
+                                  }
+                                ])
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass: "mt-2",
+                                  attrs: { color: "pink" },
+                                  on: { click: _vm.addNewRow }
+                                },
+                                [_vm._v("Add Row")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-expansion-panel",
+                [
+                  _c("v-expansion-panel-header", {
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(ref) {
+                          var open = ref.open
+                          return [
+                            _c(
+                              "v-row",
+                              { attrs: { "no-gutters": "" } },
+                              [
+                                _c("v-col", { attrs: { cols: "4" } }, [
+                                  _vm._v("Additionals")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "v-col",
+                                  {
+                                    staticClass: "text--secondary",
+                                    attrs: { cols: "8" }
+                                  },
+                                  [
+                                    _c("v-fade-transition", {
+                                      attrs: { "leave-absolute": "" }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        }
+                      }
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-expansion-panel-content",
+                    [
+                      _c(
+                        "v-row",
+                        {
+                          staticClass: "d-flex justify-space-around",
+                          attrs: { "no-gutters": "" }
+                        },
+                        [
+                          _c(
+                            "v-col",
+                            {
+                              attrs: {
+                                cols: "12",
+                                sm: "5",
+                                md: "5",
+                                lg: "5",
+                                xl: "5"
+                              }
+                            },
+                            [
+                              _c("v-text-field", {
+                                attrs: { label: "Short Description" }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "v-menu",
+                                {
+                                  attrs: {
+                                    "close-on-content-click": false,
+                                    "nudge-right": 40,
+                                    transition: "scale-transition",
+                                    "offset-y": "",
+                                    "min-width": "290px"
+                                  },
+                                  scopedSlots: _vm._u([
+                                    {
+                                      key: "activator",
+                                      fn: function(ref) {
+                                        var on = ref.on
+                                        return [
+                                          _c(
+                                            "v-text-field",
+                                            _vm._g(
+                                              {
+                                                attrs: {
+                                                  label: "Product New From",
+                                                  "prepend-icon":
+                                                    "mdi-calendar-month",
+                                                  readonly: ""
+                                                },
+                                                model: {
+                                                  value: _vm.date,
+                                                  callback: function($$v) {
+                                                    _vm.date = $$v
+                                                  },
+                                                  expression: "date"
+                                                }
+                                              },
+                                              on
+                                            )
+                                          )
+                                        ]
+                                      }
+                                    }
+                                  ]),
+                                  model: {
+                                    value: _vm.menu2,
+                                    callback: function($$v) {
+                                      _vm.menu2 = $$v
+                                    },
+                                    expression: "menu2"
+                                  }
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c("v-date-picker", {
+                                    on: {
+                                      input: function($event) {
+                                        _vm.menu2 = false
+                                      }
+                                    },
+                                    model: {
+                                      value: _vm.date,
+                                      callback: function($$v) {
+                                        _vm.date = $$v
+                                      },
+                                      expression: "date"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-menu",
+                                {
+                                  attrs: {
+                                    "close-on-content-click": false,
+                                    "nudge-right": 40,
+                                    transition: "scale-transition",
+                                    "offset-y": "",
+                                    "min-width": "290px"
+                                  },
+                                  scopedSlots: _vm._u([
+                                    {
+                                      key: "activator",
+                                      fn: function(ref) {
+                                        var on = ref.on
+                                        return [
+                                          _c(
+                                            "v-text-field",
+                                            _vm._g(
+                                              {
+                                                attrs: {
+                                                  label: "Product New To",
+                                                  "prepend-icon":
+                                                    "mdi-calendar-month",
+                                                  readonly: ""
+                                                },
+                                                model: {
+                                                  value: _vm.date2,
+                                                  callback: function($$v) {
+                                                    _vm.date2 = $$v
+                                                  },
+                                                  expression: "date2"
+                                                }
+                                              },
+                                              on
+                                            )
+                                          )
+                                        ]
+                                      }
+                                    }
+                                  ]),
+                                  model: {
+                                    value: _vm.menu3,
+                                    callback: function($$v) {
+                                      _vm.menu3 = $$v
+                                    },
+                                    expression: "menu3"
+                                  }
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c("v-date-picker", {
+                                    on: {
+                                      input: function($event) {
+                                        _vm.menu3 = false
+                                      }
+                                    },
+                                    model: {
+                                      value: _vm.date2,
+                                      callback: function($$v) {
+                                        _vm.date2 = $$v
+                                      },
+                                      expression: "date2"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-expansion-panel",
+                [
+                  _c("v-expansion-panel-header", {
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(ref) {
+                          var open = ref.open
+                          return [
+                            _c(
+                              "v-row",
+                              { attrs: { "no-gutters": "" } },
+                              [
+                                _c("v-col", { attrs: { cols: "4" } }, [
+                                  _vm._v("Location")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "v-col",
+                                  {
+                                    staticClass: "text--secondary",
+                                    attrs: { cols: "8" }
+                                  },
+                                  [
+                                    _c(
+                                      "v-fade-transition",
+                                      { attrs: { "leave-absolute": "" } },
+                                      [
+                                        open
+                                          ? _c("span", { key: "0" }, [
+                                              _vm._v("Select trip destination")
+                                            ])
+                                          : _c("span", { key: "1" }, [
+                                              _vm._v(_vm._s(_vm.trip.location))
+                                            ])
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        }
+                      }
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-expansion-panel-content",
+                    [
+                      _c(
+                        "v-row",
+                        { attrs: { "no-gutters": "" } },
+                        [
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "5" } },
+                            [
+                              _c("v-select", {
+                                attrs: {
+                                  items: _vm.locations,
+                                  chips: "",
+                                  flat: "",
+                                  solo: ""
+                                },
+                                model: {
+                                  value: _vm.trip.location,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.trip, "location", $$v)
+                                  },
+                                  expression: "trip.location"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider", {
+                            staticClass: "mx-4",
+                            attrs: { vertical: "" }
+                          }),
+                          _vm._v(" "),
+                          _c("v-col", { attrs: { cols: "3" } }, [
+                            _vm._v(
+                              "\n              Select your destination of choice\n              "
+                            ),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("a", { attrs: { href: "javascript:void(0)" } }, [
+                              _vm._v("Learn more")
+                            ])
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-actions",
+                        [
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            { attrs: { text: "", color: "secondary" } },
+                            [_vm._v("Cancel")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            { attrs: { text: "", color: "primary" } },
+                            [_vm._v("Save")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-expansion-panel",
+                [
+                  _c("v-expansion-panel-header", {
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(ref) {
+                          var open = ref.open
+                          return [
+                            _c(
+                              "v-row",
+                              { attrs: { "no-gutters": "" } },
+                              [
+                                _c("v-col", { attrs: { cols: "4" } }, [
+                                  _vm._v("Start and end dates")
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "v-col",
+                                  {
+                                    staticClass: "text--secondary",
+                                    attrs: { cols: "8" }
+                                  },
+                                  [
+                                    _c(
+                                      "v-fade-transition",
+                                      { attrs: { "leave-absolute": "" } },
+                                      [
+                                        open
+                                          ? _c("span", [
+                                              _vm._v(
+                                                "When do you want to travel?"
+                                              )
+                                            ])
+                                          : _c(
+                                              "v-row",
+                                              {
+                                                staticStyle: { width: "100%" },
+                                                attrs: { "no-gutters": "" }
+                                              },
+                                              [
+                                                _c(
+                                                  "v-col",
+                                                  { attrs: { cols: "6" } },
+                                                  [
+                                                    _vm._v(
+                                                      "Start date: " +
+                                                        _vm._s(
+                                                          _vm.trip.start ||
+                                                            "Not set"
+                                                        )
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "v-col",
+                                                  { attrs: { cols: "6" } },
+                                                  [
+                                                    _vm._v(
+                                                      "End date: " +
+                                                        _vm._s(
+                                                          _vm.trip.end ||
+                                                            "Not set"
+                                                        )
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        }
+                      }
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-expansion-panel-content",
+                    [
+                      _c(
+                        "v-row",
+                        {
+                          attrs: { justify: "space-around", "no-gutters": "" }
+                        },
+                        [
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "3" } },
+                            [
+                              _c(
+                                "v-menu",
+                                {
+                                  ref: "startMenu",
+                                  attrs: {
+                                    "close-on-content-click": false,
+                                    "return-value": _vm.trip.start,
+                                    "offset-y": "",
+                                    "min-width": "290px"
+                                  },
+                                  on: {
+                                    "update:returnValue": function($event) {
+                                      return _vm.$set(_vm.trip, "start", $event)
+                                    },
+                                    "update:return-value": function($event) {
+                                      return _vm.$set(_vm.trip, "start", $event)
+                                    }
+                                  },
+                                  scopedSlots: _vm._u([
+                                    {
+                                      key: "activator",
+                                      fn: function(ref) {
+                                        var on = ref.on
+                                        return [
+                                          _c(
+                                            "v-text-field",
+                                            _vm._g(
+                                              {
+                                                attrs: {
+                                                  label: "Start date",
+                                                  "prepend-icon": "event",
+                                                  readonly: ""
+                                                },
+                                                model: {
+                                                  value: _vm.trip.start,
+                                                  callback: function($$v) {
+                                                    _vm.$set(
+                                                      _vm.trip,
+                                                      "start",
+                                                      $$v
+                                                    )
+                                                  },
+                                                  expression: "trip.start"
+                                                }
+                                              },
+                                              on
+                                            )
+                                          )
+                                        ]
+                                      }
+                                    }
+                                  ])
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-date-picker",
+                                    {
+                                      attrs: { "no-title": "", scrollable: "" },
+                                      model: {
+                                        value: _vm.date,
+                                        callback: function($$v) {
+                                          _vm.date = $$v
+                                        },
+                                        expression: "date"
+                                      }
+                                    },
+                                    [
+                                      _c("v-spacer"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { text: "", color: "primary" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.$refs.startMenu.isActive = false
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("Cancel")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { text: "", color: "primary" },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.$refs.startMenu.save(
+                                                _vm.date
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("OK")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "3" } },
+                            [
+                              _c(
+                                "v-menu",
+                                {
+                                  ref: "endMenu",
+                                  attrs: {
+                                    "close-on-content-click": false,
+                                    "return-value": _vm.trip.end,
+                                    "offset-y": "",
+                                    "min-width": "290px"
+                                  },
+                                  on: {
+                                    "update:returnValue": function($event) {
+                                      return _vm.$set(_vm.trip, "end", $event)
+                                    },
+                                    "update:return-value": function($event) {
+                                      return _vm.$set(_vm.trip, "end", $event)
+                                    }
+                                  },
+                                  scopedSlots: _vm._u([
+                                    {
+                                      key: "activator",
+                                      fn: function(ref) {
+                                        var on = ref.on
+                                        return [
+                                          _c(
+                                            "v-text-field",
+                                            _vm._g(
+                                              {
+                                                attrs: {
+                                                  label: "End date",
+                                                  "prepend-icon": "event",
+                                                  readonly: ""
+                                                },
+                                                model: {
+                                                  value: _vm.trip.end,
+                                                  callback: function($$v) {
+                                                    _vm.$set(
+                                                      _vm.trip,
+                                                      "end",
+                                                      $$v
+                                                    )
+                                                  },
+                                                  expression: "trip.end"
+                                                }
+                                              },
+                                              on
+                                            )
+                                          )
+                                        ]
+                                      }
+                                    }
+                                  ])
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-date-picker",
+                                    {
+                                      attrs: { "no-title": "", scrollable: "" },
+                                      model: {
+                                        value: _vm.date,
+                                        callback: function($$v) {
+                                          _vm.date = $$v
+                                        },
+                                        expression: "date"
+                                      }
+                                    },
+                                    [
+                                      _c("v-spacer"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { text: "", color: "primary" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.$refs.endMenu.isActive = false
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("Cancel")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: { text: "", color: "primary" },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.$refs.endMenu.save(
+                                                _vm.date
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("OK")]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
         ],
         1
       )
@@ -103565,6 +108886,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/admin/ProductComponent.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/ProductComponent.vue ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ProductComponent_vue_vue_type_template_id_6437bea8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductComponent.vue?vue&type=template&id=6437bea8& */ "./resources/js/admin/ProductComponent.vue?vue&type=template&id=6437bea8&");
+/* harmony import */ var _ProductComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductComponent.vue?vue&type=script&lang=js& */ "./resources/js/admin/ProductComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ProductComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ProductComponent_vue_vue_type_template_id_6437bea8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ProductComponent_vue_vue_type_template_id_6437bea8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/admin/ProductComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/admin/ProductComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/admin/ProductComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ProductComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/admin/ProductComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/admin/ProductComponent.vue?vue&type=template&id=6437bea8&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/admin/ProductComponent.vue?vue&type=template&id=6437bea8& ***!
+  \********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductComponent_vue_vue_type_template_id_6437bea8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ProductComponent.vue?vue&type=template&id=6437bea8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/admin/ProductComponent.vue?vue&type=template&id=6437bea8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductComponent_vue_vue_type_template_id_6437bea8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductComponent_vue_vue_type_template_id_6437bea8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/admin/RolesComponent.vue":
 /*!***********************************************!*\
   !*** ./resources/js/admin/RolesComponent.vue ***!
@@ -103712,7 +109102,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Test2_vue_vue_type_template_id_efb6f01c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Test2.vue?vue&type=template&id=efb6f01c& */ "./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c&");
+/* harmony import */ var _Test2_vue_vue_type_template_id_efb6f01c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Test2.vue?vue&type=template&id=efb6f01c&scoped=true& */ "./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c&scoped=true&");
 /* harmony import */ var _Test2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Test2.vue?vue&type=script&lang=js& */ "./resources/js/admin/Test2.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -103724,11 +109114,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _Test2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Test2_vue_vue_type_template_id_efb6f01c___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Test2_vue_vue_type_template_id_efb6f01c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Test2_vue_vue_type_template_id_efb6f01c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Test2_vue_vue_type_template_id_efb6f01c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "efb6f01c",
   null
   
 )
@@ -103754,19 +109144,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c&":
-/*!*********************************************************************!*\
-  !*** ./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c& ***!
-  \*********************************************************************/
+/***/ "./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c&scoped=true&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c&scoped=true& ***!
+  \*********************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test2_vue_vue_type_template_id_efb6f01c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Test2.vue?vue&type=template&id=efb6f01c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test2_vue_vue_type_template_id_efb6f01c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test2_vue_vue_type_template_id_efb6f01c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Test2.vue?vue&type=template&id=efb6f01c&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/admin/Test2.vue?vue&type=template&id=efb6f01c&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test2_vue_vue_type_template_id_efb6f01c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test2_vue_vue_type_template_id_efb6f01c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test2_vue_vue_type_template_id_efb6f01c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -104309,13 +109699,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _admin_AttributeSets__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./admin/AttributeSets */ "./resources/js/admin/AttributeSets.vue");
 /* harmony import */ var _admin_Attribute__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./admin/Attribute */ "./resources/js/admin/Attribute.vue");
 /* harmony import */ var _admin_Category__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./admin/Category */ "./resources/js/admin/Category.vue");
-/* harmony import */ var _admin_Test__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./admin/Test */ "./resources/js/admin/Test.vue");
-/* harmony import */ var _admin_Test2__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./admin/Test2 */ "./resources/js/admin/Test2.vue");
-/* harmony import */ var _admin_HomeSlide__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./admin/HomeSlide */ "./resources/js/admin/HomeSlide.vue");
-/* harmony import */ var _admin_HomeSection__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./admin/HomeSection */ "./resources/js/admin/HomeSection.vue");
+/* harmony import */ var _admin_ProductComponent__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./admin/ProductComponent */ "./resources/js/admin/ProductComponent.vue");
+/* harmony import */ var _admin_Test__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./admin/Test */ "./resources/js/admin/Test.vue");
+/* harmony import */ var _admin_Test2__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./admin/Test2 */ "./resources/js/admin/Test2.vue");
+/* harmony import */ var _admin_HomeSlide__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./admin/HomeSlide */ "./resources/js/admin/HomeSlide.vue");
+/* harmony import */ var _admin_HomeSection__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./admin/HomeSection */ "./resources/js/admin/HomeSection.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
 
 
 
@@ -104339,11 +109731,11 @@ var routes = [{
   name: 'home'
 }, {
   path: '/test',
-  component: _admin_Test__WEBPACK_IMPORTED_MODULE_15__["default"],
+  component: _admin_Test__WEBPACK_IMPORTED_MODULE_16__["default"],
   name: 'test'
 }, {
   path: '/test2',
-  component: _admin_Test2__WEBPACK_IMPORTED_MODULE_16__["default"],
+  component: _admin_Test2__WEBPACK_IMPORTED_MODULE_17__["default"],
   name: 'test2'
 }, {
   path: '/login',
@@ -104392,11 +109784,11 @@ var routes = [{
     name: 'User'
   }, {
     path: 'home-slides',
-    component: _admin_HomeSlide__WEBPACK_IMPORTED_MODULE_17__["default"],
+    component: _admin_HomeSlide__WEBPACK_IMPORTED_MODULE_18__["default"],
     name: 'home.slides'
   }, {
     path: 'home-sections',
-    component: _admin_HomeSection__WEBPACK_IMPORTED_MODULE_18__["default"],
+    component: _admin_HomeSection__WEBPACK_IMPORTED_MODULE_19__["default"],
     name: 'home.sections'
   }, {
     path: 'attribute-sets',
@@ -104410,6 +109802,10 @@ var routes = [{
     path: 'categories',
     component: _admin_Category__WEBPACK_IMPORTED_MODULE_14__["default"],
     name: 'categories'
+  }, {
+    path: 'products',
+    component: _admin_ProductComponent__WEBPACK_IMPORTED_MODULE_15__["default"],
+    name: 'products'
   }],
   beforeEnter: function beforeEnter(to, from, next) {
     axios.get('/api/verify').then(function (res) {

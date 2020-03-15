@@ -23,7 +23,7 @@ class AttributeSetsController extends Controller
 
     public function subattribs(Attribute_set $attribute_set)
     {
-        return $attribute_set->attributes()->orderBy('name', 'ASC')->get(['id', 'name']);
+        return $attribute_set->attributes()->orderBy('sort_id', 'ASC')->get(['id', 'name']);
     }
 
     public function getAttribs(Request $request)

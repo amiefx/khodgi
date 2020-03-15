@@ -11,7 +11,7 @@ class AttributesController extends Controller
 {
     public function index()
     {
-        return response()->json(['attributes' => Attribute::all()], 200);
+        return response()->json(['attributes' => Attribute::get()], 200);
     }
 
     public function store(Request $request)

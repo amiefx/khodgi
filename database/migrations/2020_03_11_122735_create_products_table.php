@@ -33,6 +33,7 @@ class CreateProductsTable extends Migration
             $table->string('image4')->nullable();
             $table->date('new_from')->nullable();
             $table->date('new_to')->nullable();
+            $table->string('short_description')->nullable();
             $table->timestamps();
         });
     }

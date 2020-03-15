@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class product extends Model
+class Product extends Model
 {
     protected $fillable = [
         'name',
@@ -26,4 +26,9 @@ class product extends Model
         'new_from',
         'new_to',
     ];
+
+    public function product_sizes()
+    {
+        return $this->hasMany(Product_size::class);
+    }
 }

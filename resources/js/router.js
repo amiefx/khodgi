@@ -16,6 +16,7 @@ import UserComponent from './admin/UserComponent';
 import AttributeSets from './admin/AttributeSets';
 import Attribute from './admin/Attribute';
 import Category from './admin/Category';
+import ProductComponent from './admin/ProductComponent';
 import Test from './admin/Test';
 import Test2 from './admin/Test2';
 
@@ -53,6 +54,7 @@ const routes = [
              { path: 'attribute-sets', component: AttributeSets, name: 'attribute.sets' },
              { path: 'attributes', component: Attribute, name: 'attributes' },
              { path: 'categories', component: Category, name: 'categories' },
+             { path: 'products', component: ProductComponent, name: 'products' },
         ],
         beforeEnter: (to, from, next) => {
             axios.get('/api/verify')
