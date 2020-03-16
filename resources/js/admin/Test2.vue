@@ -1,397 +1,154 @@
 <template>
   <v-app>
     <v-container>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <v-expansion-panels>
-        <v-expansion-panel>
-          <v-expansion-panel-header v-slot="{ open }">
-            <v-row no-gutters>
-              <v-col cols="4">General</v-col>
-              <v-col cols="8" class="text--secondary">
-                <v-fade-transition leave-absolute>
-                  <!-- <span v-if="open" key="0">Select trip destination</span>
-                  <span v-else key="1">{{ trip.location }}</span>-->
-                </v-fade-transition>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-row no-gutters class="d-flex justify-space-around">
-              <v-col cols="12" sm="5" md="5" lg="5" xl="5">
-                <v-text-field label="Name"></v-text-field>
-                <v-select :items="locations" label="Category"></v-select>
-                <v-checkbox label="isActive"></v-checkbox>
-              </v-col>
-              <v-divider vertical class="mx-4 hidden-xs-only"></v-divider>
-              <v-col cols="12" sm="5" md="5" lg="5" xl="5">
-                <vue-simplemde v-model="locations" ref="markdownEditor" />
-              </v-col>
-            </v-row>
+      <!-- <v-simple-table>
+        <template v-slot:default>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr scope="row" v-for="(invoice_product, k) in invoice_products" :key="k">
+            <td>
+                <v-btn icon color="pink" @click="deleteRow(k, invoice_product)">
+                    <v-icon>mdi-heart</v-icon>
+                </v-btn>
+            </td>
+            <td>
+                <v-text-field v-model="invoice_products.product_no"></v-text-field>
+            </td>
+            <td>
+                <v-text-field v-model="invoice_products.product_name"></v-text-field>
+            </td>
+            <td>
+                <v-text-field v-model="invoice_products.product_price" @change="calculateLineTotal(invoice_product)"></v-text-field>
+            </td>
+            <td>
+                <v-text-field v-model="invoice_products.product_qty" @change="calculateLineTotal(invoice_product)"></v-text-field>
+            </td>
+            <td>
+                <v-text-field v-model="invoice_products.line_total"></v-text-field>
+            </td>
+        </tr>
+        </tbody>
+        </template>
+      </v-simple-table>-->
 
-            <!-- <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn text color="secondary">Cancel</v-btn>
-              <v-btn text color="primary">Save</v-btn>
-            </v-card-actions>-->
-          </v-expansion-panel-content>
-        </v-expansion-panel>
+      <v-simple-table>
+        <template v-slot:default>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>#</th>
+              <th>#</th>
+              <th>#</th>
+              <th>#</th>
+              <th>#</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(invoice_product, k) in invoice_products" :key="k">
+              <td scope="row" class="trashIconContainer">
+                <v-btn icon @click="deleteRow(k, invoice_product)">
+                  <v-icon>mdi-heart</v-icon>
+                </v-btn>
+              </td>
+              <td>
+                <!-- <input class="form-control" type="text" v-model="invoice_product.product_no" /> -->
+                <v-select
+                  :items="items"
+                  label="Outlined style"
+                  v-model="invoice_product.product_no"
+                ></v-select>
+              </td>
+              <td>
+                <!-- <input class="form-control" type="text" v-model="invoice_product.product_name" /> -->
+                <v-text-field v-model="invoice_product.product_name"></v-text-field>
+              </td>
+              <td>
+                <!-- <input class="form-control text-right" type="number" min="0" step=".01" v-model="invoice_product.product_price" @change="calculateLineTotal(invoice_product)" -->
+                <!-- /> -->
+                <v-text-field
+                  type="number"
+                  min="0"
+                  step=".01"
+                  v-model="invoice_product.product_price"
+                  @change="calculateLineTotal(invoice_product)"
+                ></v-text-field>
+              </td>
+              <td>
+                <!-- <input class="form-control text-right" type="number" min="0" step=".01" v-model="invoice_product.product_qty" @change="calculateLineTotal(invoice_product)"
+                />-->
+                <v-text-field
+                  type="number"
+                  min="0"
+                  step=".01"
+                  v-model="invoice_product.product_qty"
+                  @change="calculateLineTotal(invoice_product)"
+                ></v-text-field>
+              </td>
+              <td>
+                <!-- <input readonly class="form-control text-right" type="number" min="0" step=".01" v-model="invoice_product.line_total" /> -->
+                <v-text-field type="number" min="0" step=".01" v-model="invoice_product.line_total"></v-text-field>
+              </td>
+            </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
+      <v-btn color="pink" @click="addNewRow">Add</v-btn>
 
-        <v-expansion-panel>
-          <v-expansion-panel-header v-slot="{ open }">
-            <v-row no-gutters>
-              <v-col cols="4">Price</v-col>
-              <v-col cols="8" class="text--secondary">
-                <v-fade-transition leave-absolute></v-fade-transition>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-row no-gutters class="d-flex justify-space-around">
-              <v-col cols="12" sm="5" md="5" lg="5" xl="5">
-                <v-text-field label="Price PKR"></v-text-field>
-                <v-text-field label="Price USD"></v-text-field>
-                <v-text-field label="Price AUD"></v-text-field>
-                <v-text-field label="Price EUR"></v-text-field>
-                <v-text-field label="Price GBP"></v-text-field>
-              </v-col>
-              <v-divider vertical class="mx-4 hidden-xs-only"></v-divider>
-              <v-col cols="12" sm="5" md="5" lg="5" xl="5">
-                <v-text-field label="Special Price % OFF"></v-text-field>
+      <v-divider></v-divider>
 
-                <v-menu
-                  v-model="menu2"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on }">
-                    <v-text-field
-                      v-model="date"
-                      label="Special Price Start"
-                      prepend-icon="mdi-calendar-month"
-                      readonly
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
-                </v-menu>
+      <div>
+        <v-card :loading="loading" class="mx-auto my-12" max-width="374">
+          <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>
 
-                <v-menu
-                  v-model="menu3"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on }">
-                    <v-text-field
-                      v-model="date2"
-                      label="Special Price End"
-                      prepend-icon="mdi-calendar-month"
-                      readonly
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker v-model="date2" @input="menu3 = false"></v-date-picker>
-                </v-menu>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
+          <v-card-title>Cafe Badilico</v-card-title>
 
-        <v-expansion-panel>
-          <v-expansion-panel-header v-slot="{ open }">
-            <v-row no-gutters>
-              <v-col cols="4">Inventory</v-col>
-              <v-col cols="8" class="text--secondary">
-                <v-fade-transition leave-absolute></v-fade-transition>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-row no-gutters class="d-flex justify-space-around">
-              <v-col cols="12" sm="5" md="5" lg="5" xl="5">
-                <v-text-field label="SKU"></v-text-field>
-                <v-checkbox label="Stock Availability"></v-checkbox>
-              </v-col>
-              <v-divider vertical class="mx-4 hidden-xs-only"></v-divider>
-              <v-col cols="12" sm="5" md="5" lg="5" xl="5">
-                <v-checkbox label="Manage Inventory"></v-checkbox>
-                <v-text-field label="Quantity"></v-text-field>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
+          <v-card-text>
+            <v-row align="center" class="mx-0">
+              <v-rating :value="4.5" color="amber" dense half-increments readonly size="14"></v-rating>
 
-        <v-expansion-panel>
-          <v-expansion-panel-header v-slot="{ open }">
-            <v-row no-gutters>
-              <v-col cols="4">Images</v-col>
-              <v-col cols="8" class="text--secondary">
-                <v-fade-transition leave-absolute></v-fade-transition>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-row no-gutters class="d-flex justify-space-around">
-              <v-col cols="12" sm="5" md="5" lg="5" xl="5">Images</v-col>
-              <v-divider vertical class="mx-4 hidden-xs-only"></v-divider>
-              <v-col cols="12" sm="5" md="5" lg="5" xl="5">Images2</v-col>
-            </v-row>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-
-        <v-expansion-panel>
-          <v-expansion-panel-header v-slot="{ open }">
-            <v-row no-gutters>
-              <v-col cols="4">Attributes</v-col>
-              <v-col cols="8" class="text--secondary">
-                <v-fade-transition leave-absolute></v-fade-transition>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-row no-gutters class="d-flex justify-space-around">
-              <v-col cols="12">
-                <v-simple-table>
-                  <template v-slot:default>
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <!-- <th>Attribute Set</th> -->
-                        <th>Attribute</th>
-                        <th class="text-center">XS</th>
-                        <th class="text-center">S</th>
-                        <th class="text-center">M</th>
-                        <th class="text-center">L</th>
-                        <th class="text-center">XL</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr v-for="(size_attrib, k) in size_attribs" :key="k">
-                        <td scope="row">
-                          <v-btn icon @click="deleteRow(k, size_attrib)">
-                            <v-icon>mdi-delete</v-icon>
-                          </v-btn>
-                        </td>
-                        <!-- <td>
-                          <v-select
-                            v-model="size_attrib.attribute_set"
-                            :items="attribs"
-                            item-text="name"
-                            item-value="id"
-                            label="Arrtibute Set ID"
-                          ></v-select>
-                        </td> -->
-                        <td>
-                          <v-select
-                            v-model="size_attrib.attribute"
-                            :items="subattribs"
-                            item-text="name"
-                            item-value="id"
-                            label="Sub"
-                          ></v-select>
-                        </td>
-                        <!-- <td>
-                          <v-text-field v-model="invoice_product.product_name"></v-text-field>
-                        </td>-->
-                        <td>
-                          <v-text-field type="number" min="0" step=".01" v-model="size_attrib.xs"></v-text-field>
-                        </td>
-                        <td>
-                          <v-text-field type="number" min="0" step=".01" v-model="size_attrib.s"></v-text-field>
-                        </td>
-                        <td>
-                          <v-text-field type="number" min="0" step=".01" v-model="size_attrib.m"></v-text-field>
-                        </td>
-                        <td>
-                          <v-text-field type="number" min="0" step=".01" v-model="size_attrib.l"></v-text-field>
-                        </td>
-                        <td>
-                          <v-text-field type="number" min="0" step=".01" v-model="size_attrib.xl"></v-text-field>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </template>
-                </v-simple-table>
-                <v-btn color="pink" class="mt-2" @click="addNewRow">Add Row</v-btn>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-
-        <v-expansion-panel>
-          <v-expansion-panel-header v-slot="{ open }">
-            <v-row no-gutters>
-              <v-col cols="4">Additionals</v-col>
-              <v-col cols="8" class="text--secondary">
-                <v-fade-transition leave-absolute></v-fade-transition>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-row no-gutters class="d-flex justify-space-around">
-              <v-col cols="12" sm="5" md="5" lg="5" xl="5">
-                <v-text-field label="Short Description"></v-text-field>
-
-                <v-menu
-                  v-model="menu2"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on }">
-                    <v-text-field
-                      v-model="date"
-                      label="Product New From"
-                      prepend-icon="mdi-calendar-month"
-                      readonly
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
-                </v-menu>
-
-                <v-menu
-                  v-model="menu3"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on }">
-                    <v-text-field
-                      v-model="date2"
-                      label="Product New To"
-                      prepend-icon="mdi-calendar-month"
-                      readonly
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker v-model="date2" @input="menu3 = false"></v-date-picker>
-                </v-menu>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-
-        <v-expansion-panel>
-          <v-expansion-panel-header v-slot="{ open }">
-            <v-row no-gutters>
-              <v-col cols="4">Location</v-col>
-              <v-col cols="8" class="text--secondary">
-                <v-fade-transition leave-absolute>
-                  <span v-if="open" key="0">Select trip destination</span>
-                  <span v-else key="1">{{ trip.location }}</span>
-                </v-fade-transition>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-row no-gutters>
-              <v-spacer></v-spacer>
-              <v-col cols="5">
-                <v-select v-model="trip.location" :items="locations" chips flat solo></v-select>
-              </v-col>
-
-              <v-divider vertical class="mx-4"></v-divider>
-
-              <v-col cols="3">
-                Select your destination of choice
-                <br />
-                <a href="javascript:void(0)">Learn more</a>
-              </v-col>
+              <div class="grey--text ml-4">4.5 (413)</div>
             </v-row>
 
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn text color="secondary">Cancel</v-btn>
-              <v-btn text color="primary">Save</v-btn>
-            </v-card-actions>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
+            <div class="my-4 subtitle-1">$ • Italian, Cafe</div>
 
-        <v-expansion-panel>
-          <v-expansion-panel-header v-slot="{ open }">
-            <v-row no-gutters>
-              <v-col cols="4">Start and end dates</v-col>
-              <v-col cols="8" class="text--secondary">
-                <v-fade-transition leave-absolute>
-                  <span v-if="open">When do you want to travel?</span>
-                  <v-row v-else no-gutters style="width: 100%">
-                    <v-col cols="6">Start date: {{ trip.start || 'Not set' }}</v-col>
-                    <v-col cols="6">End date: {{ trip.end || 'Not set' }}</v-col>
-                  </v-row>
-                </v-fade-transition>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-row justify="space-around" no-gutters>
-              <v-col cols="3">
-                <v-menu
-                  ref="startMenu"
-                  :close-on-content-click="false"
-                  :return-value.sync="trip.start"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on }">
-                    <v-text-field
-                      v-model="trip.start"
-                      label="Start date"
-                      prepend-icon="event"
-                      readonly
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker v-model="date" no-title scrollable>
-                    <v-spacer></v-spacer>
-                    <v-btn text color="primary" @click="$refs.startMenu.isActive = false">Cancel</v-btn>
-                    <v-btn text color="primary" @click="$refs.startMenu.save(date)">OK</v-btn>
-                  </v-date-picker>
-                </v-menu>
-              </v-col>
+            <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+          </v-card-text>
 
-              <v-col cols="3">
-                <v-menu
-                  ref="endMenu"
-                  :close-on-content-click="false"
-                  :return-value.sync="trip.end"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on }">
-                    <v-text-field
-                      v-model="trip.end"
-                      label="End date"
-                      prepend-icon="event"
-                      readonly
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker v-model="date" no-title scrollable>
-                    <v-spacer></v-spacer>
-                    <v-btn text color="primary" @click="$refs.endMenu.isActive = false">Cancel</v-btn>
-                    <v-btn text color="primary" @click="$refs.endMenu.save(date)">OK</v-btn>
-                  </v-date-picker>
-                </v-menu>
-              </v-col>
-            </v-row>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-      </v-expansion-panels>
+          <v-divider class="mx-4"></v-divider>
+
+          <v-card-title>Tonight's availability</v-card-title>
+
+          <v-card-text>
+            <v-chip-group
+              v-model="selection"
+              active-class="deep-purple accent-4 white--text"
+              column
+            >
+              <v-chip>5:30PM</v-chip>
+
+              <v-chip>7:30PM</v-chip>
+
+              <v-chip>8:00PM</v-chip>
+
+              <v-chip>9:00PM</v-chip>
+            </v-chip-group>
+          </v-card-text>
+
+          <v-card-actions>
+            <v-btn color="deep-purple lighten-2" text @click="reserve">Reserve</v-btn>
+          </v-card-actions>
+          <div class="sale-badge">15%</div>
+        </v-card>
+      </div>
     </v-container>
   </v-app>
 </template>
@@ -399,97 +156,88 @@
 <script>
 export default {
   data: () => ({
-    date: null,
-    date2: null,
-    menu2: null,
-    menu3: null,
-    trip: {
-      name: "",
-      location: null,
-      start: null,
-      end: null
-    },
-    locations: [
-      "Australia",
-      "Barbados",
-      "Chile",
-      "Denmark",
-      "Equador",
-      "France"
-    ],
-    size_attribs: [
+    invoice_subtotal: 0,
+    invoice_total: 0,
+    invoice_tax: 5,
+    invoice_products: [
       {
-        attribute_set: "",
-        attribute: "",
-        xs: "",
-        s: "",
-        m: "",
-        l: "",
-        xl: ""
+        product_no: "",
+        product_name: "",
+        product_price: "",
+        product_qty: "",
+        line_total: 0
       }
     ],
-    attrib: "",
-    attribs: [],
-    subattrib: "",
-    subattribs: []
+    items: ["Foo", "Bar", "Fizz", "Buzz"]
   }),
 
-  mounted() {
-    // this.loadAttribs();
-    this.locadSubAttributes();
-  },
   methods: {
-    // loadAttribs() {
-    //   axios
-    //     .get("/api/attribute-sets")
-    //     .then(res => {
-    //       this.attribs = res.data.data;
-    //     })
-    //     .catch(err => {
-    //       console.log(err);
-    //     });
-    // },
-
-     locadSubAttributes() {
-    //locadSubAttributes(index, size_attrib) {
-    //  var idx = this.size_attribs.indexOf(size_attrib);
-    //  console.log(idx)
-    //   axios
-    //     .get(`/api/subattribs/${this.size_attribs[idx].attribute_set}`)
-    //     .then(res => {
-    //       this.subattribs = res.data;
-    //     })
-    //     .catch(err => console.log(err));
-        axios.get('/api/attributes')
-            .then(res => {
-                this.subattribs = res.data.attributes;
-                console.log(res);
-
-            })
+    saveInvoice() {
+      console.log(JSON.stringify(this.invoice_products));
     },
+    calculateTotal() {
+      var subtotal, total;
+      subtotal = this.invoice_products.reduce(function(sum, product) {
+        var lineTotal = parseFloat(product.line_total);
+        if (!isNaN(lineTotal)) {
+          return sum + lineTotal;
+        }
+      }, 0);
 
-    deleteRow(index, size_attrib) {
-      var idx = this.size_attribs.indexOf(size_attrib);
-      console.log(idx, index);
-      if (idx > -1) {
-        this.size_attribs.splice(idx, 1);
+      this.invoice_subtotal = subtotal.toFixed(2);
+
+      total = subtotal * (this.invoice_tax / 100) + subtotal;
+      total = parseFloat(total);
+      if (!isNaN(total)) {
+        this.invoice_total = total.toFixed(2);
+      } else {
+        this.invoice_total = "0.00";
       }
     },
+    calculateLineTotal(invoice_product) {
+      var total =
+        parseFloat(invoice_product.product_price) *
+        parseFloat(invoice_product.product_qty);
+      if (!isNaN(total)) {
+        invoice_product.line_total = total.toFixed(2);
+      }
+      this.calculateTotal();
+    },
+    deleteRow(index, invoice_product) {
+      var idx = this.invoice_products.indexOf(invoice_product);
+      console.log(idx, index);
+      if (idx > -1) {
+        this.invoice_products.splice(idx, 1);
+      }
+      this.calculateTotal();
+    },
     addNewRow() {
-      this.size_attribs.push({
-        attribute_set: "",
-        attribute: "",
-        xs: "",
-        s: "",
-        m: "",
-        l: "",
-        xl: ""
+      this.invoice_products.push({
+        product_no: "",
+        product_name: "",
+        product_price: "",
+        product_qty: "",
+        line_total: 0
       });
     }
   }
 };
 </script>
 
-<style scoped>
+<style>
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
 
+.sale-badge {
+  background: #fc7070;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 14px;
+  padding: 7px 10px;
+  text-transform: uppercase;
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 </style>

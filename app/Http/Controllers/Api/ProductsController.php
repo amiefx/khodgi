@@ -29,6 +29,13 @@ class ProductsController extends Controller
         ], 200);
     }
 
+    public function getHomeProducts()
+    {
+        return response()->json([
+            'products' => Product::get(['id', 'name', 'image1', 'image2', 'price_pkr'])->random(2)
+        ], 200);
+    }
+
     public function store(Request $request)
     {
         if ($request->image1) {

@@ -19,6 +19,7 @@ import Category from './admin/Category';
 import ProductComponent from './admin/ProductComponent';
 import Test from './admin/Test';
 import Test2 from './admin/Test2';
+import Test3 from './admin/Test3';
 
 import HomeSlide from './admin/HomeSlide';
 import HomeSection from './admin/HomeSection';
@@ -29,6 +30,7 @@ const routes = [
     { path: '/', component: Home, name: 'home' },
     { path: '/test', component: Test, name: 'test' },
     { path: '/test2', component: Test2, name: 'test2' },
+    { path: '/test3', component: Test3, name: 'test3' },
     { path: '/login', component: LoginComponent, name: 'Login' },
     { path: '/register', component: RegisterComponent, name: 'Register' },
     { path: '/forgotpassword', component: ForgotpasswordComponent, name: 'Forgotpassword' },

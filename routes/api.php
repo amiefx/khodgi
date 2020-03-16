@@ -21,6 +21,8 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/products/get-home-products', 'Api\ProductsController@getHomeProducts');
+
 Route::resource('/attribute-sets', 'Api\AttributeSetsController');
 
 Route::post('/register', 'Api\AuthController@register');
